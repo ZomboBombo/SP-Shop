@@ -1,0 +1,33 @@
+{% from "./_head-scripts.nunj" import headScripts %}
+
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<!-- Front-end by sborkaproject.com -->
+		<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="«SP.Shop — unique merchandise store of the company «Sborka Project».">
+
+		<title>{% block title %}Project{% endblock %}</title>
+
+		{{ headScripts() }}
+
+		{% block stylesheets %}
+			<link rel="stylesheet" type="text/css" href="assets/css/styles.css?hash" />
+		{% endblock stylesheets %}
+    
+    {# *******************************
+    *** Место для прелоада шрифтов ***
+    ******************************* #}
+	</head>
+	<body>
+
+    {% block content %}
+    {% endblock content %}
+
+		{% block scripts %}
+			<script src="assets/js/bundle.js?hash"></script>
+		{% endblock scripts %}
+	</body>
+</html>
