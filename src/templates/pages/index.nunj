@@ -6,4 +6,275 @@
 
 {% block content %}
 
+    <header class="site-header">
+      <div class="container">
+        <a class="logo site-header__logo">
+          <img src="" width="89" height="32" alt="«SP.shop» logo">
+        </a>
+
+        <nav class="site-header__navigation">
+          <ul class="navigation-menu">
+            <li class="navigation-menu__item">
+              <a href="#" class="navigation-menu__link">Women's</a>
+            </li>
+            <li class="navigation-menu__item">
+              <a href="#" class="navigation-menu__link">Men's</a>
+            </li>
+            <li class="navigation-menu__item">
+              <a href="#" class="navigation-menu__link">Home</a>
+            </li>
+            <li class="navigation-menu__item">
+              <a href="#" class="navigation-menu__link">Travel</a>
+            </li>
+            <li class="navigation-menu__item">
+              <a href="#" class="navigation-menu__link">Beauty</a>
+            </li>
+            <li class="navigation-menu__item">
+              <a href="#" class="navigation-menu__link">Sale</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="site-header__controls">
+          <div class="site-header__search search-field">
+            <button type="button" class="search-field__button" title="Site search: click to Start..." aria-label="Site search: click to Start...">
+              <svg width="24" height="24">
+                <use xlink:href="#"></use>
+              </svg>
+            </button>
+
+            <input type="text" class="search-field__input" placeholder="Enter merch name...">
+          </div>
+
+          <button type="button" class="site-header__basket" title="Items in your cart: 0" aria-label="Items in your cart: 0">
+            <svg width="24" height="21">
+              <use xlink:href="#"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container site-main-content">
+      <h1 class="visually-hidden">«SP.shop» — store of unique merch from the "Sborka Project" company.</h1>
+
+      <div class="site-main-content__main-window">
+        <section class="payment-steps">
+          <h2 class="visually-hidden">Payment processing steps</h2>
+
+          <ol class="payment-steps__list payment-breadcrumbs">
+            <li class="payment-breadcrumbs__item">
+              <button type="button" class="payment-breadcrumbs__step-button">
+                <b class="payment-breadcrumbs__step-button-counter">1</b>
+                <span class="payment-breadcrumbs__step-button-name">Account</span>
+              </button>
+            </li>
+            <li class="payment-breadcrumbs__item">
+              <button type="button" class="payment-breadcrumbs__step-button">
+                <b class="payment-breadcrumbs__step-button-counter">2</b>
+                <span class="payment-breadcrumbs__step-button-name">Shipping</span>
+              </button>
+            </li>
+            <li class="payment-breadcrumbs__item">
+              <button type="button" class="payment-breadcrumbs__step-button">
+                <b class="payment-breadcrumbs__step-button-counter">3</b>
+                <span class="payment-breadcrumbs__step-button-name">Billing</span>
+              </button>
+            </li>
+            <li class="payment-breadcrumbs__item">
+              <button type="button" class="payment-breadcrumbs__step-button">
+                <b class="payment-breadcrumbs__step-button-counter">4</b>
+                <span class="payment-breadcrumbs__step-button-name">Review</span>
+              </button>
+            </li>
+          </ol>
+        </section>
+
+        <section class="billing-information">
+          <h2 class="billing-information__title">Billing information</h2>
+
+          <div class="billing-information__payment-options billing-payment-options">
+            <input type="radio" name="billing-payment-option" class="billing-payment-options__input" id="billing-payment-credit-card" checked>
+            <label for="billing-payment-credit-card" class="billing-payment-options__label">Pay with Credit Card</label>
+
+            <input type="radio" name="billing-payment-option" class="billing-payment-options__input" id="billing-payment-paypal">
+            <label for="billing-payment-paypal" class="billing-payment-options__label">
+              <span class="visually-hidden">Pay with «PayPal»</span>
+              <svg>
+                <use xlink:href="#icon-paypal"></use>
+              </svg>
+            </label>
+          </div>
+
+          <form action="" method="post" enctype="multipart/form-data" class="billing-information__credit-card-details credit-card-form">
+            <div class="credit-card-form__card-box">
+              <label class="credit-card-form__label">
+                Name on card
+                <input type="text" placeholder="Please, enter the name of the cardholder..." required>
+              </label>
+
+              <fieldset class="credit-card-form__fieldset">
+                <legend class="credit-card-form__label">Card number</legend>
+
+                <div class="credit-card-form__fieldset-wrapper">
+                  <input type="text" pattern="[0-9]{4}" inputmode="numeric" placeholder="XXXX" required>
+                  <input type="text" pattern="[0-9]{4}" inputmode="numeric" placeholder="XXXX" required>
+                  <input type="text" pattern="[0-9]{4}" inputmode="numeric" placeholder="XXXX" required>
+                  <input type="text" pattern="[0-9]{4}" inputmode="numeric" placeholder="XXXX" required>
+                </div>
+              </fieldset>
+
+              <fieldset class="credit-card-form__fieldset">
+                <legend class="visually-hidden">Additional card info</legend>
+
+                <label class="credit-card-form__label">
+                  <span>Expire date</span>
+                  <input type="text" inputmode="numeric" placeholder="Enter the expire date of the card..." required>
+                </label>
+
+                <label class="credit-card-form__label">
+                  <span class="more-info">CVV code</span>
+                  <input type="text" pattern="[0-9]{3}" inputmode="numeric" placeholder="Enter 3 secret digits..." required>
+                </label>
+              </fieldset>
+            </div>
+
+            <fieldset class="credit-card-form__fieldset">
+              <legend class="visually-hidden">Additional options and conditions</legend>
+
+              <input type="checkbox" class="visually-hidden" id="credit-card-save" checked>
+              <label for="credit-card-save" class="credit-card-form__label">Save information of this credit card</label>
+
+              <input type="checkbox" class="visually-hidden" id="credit-card-privacy-policy" required>
+              <label for="credit-card-privacy-policy" class="credit-card-form__label">I accept the <a href="#" class="credit-card-form__link">terms and conditions</a> and the <a href="#" class="credit-card-form__link">Privacy Policies</a></label>
+            </fieldset>
+
+            <div class="credit-card-form__buttons-box">
+              <button type="button" class="credit-card-form__button" title="Back to the previous step of payment" aria-label="Back to the previous step of payment">Back</button>
+              <button type="submit" class="credit-card-form__button credit-card-form__button--submit" title="Check out the validity of entered data and submit the Form" aria-label="Check out the validity of entered data and submit the Form">Check Out</button>
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <div class="site-main-content__aside-window">
+        <section class="basket-content">
+          <h2 class="basket-content__title">Basket content</h2>
+
+          <ul class="basket-content__products">
+            <li class="basket-content__products-item">
+              <article class="product-card">
+                <h3 class="visually-hidden">Product card</h3>
+
+                <picture>
+                  <img src="" width="100" height="100" class="product-card__preview" alt="Demi-season storm-resistant jacket from the «SP Autumn-2021» collection.">
+                </picture>
+
+                <div class="product-card__content">
+                  <p class="product-card__description">Demi-season storm-resistant jacket from the new autumn collection «SP Autumn-2021» will easily help you to survive any bad weather.</p>
+  
+                  <div class="product-card__quantity-management">
+                    <div class="product-card__goods-count">
+                      <button type="button" class="product-card__goods-count-toggle product-card__goods-count-toggle--subtract" title="Remove one item of this product from the basket" aria-label="Remove one item of this product from the basket">
+                        <svg width="20" height="20" class="product-card__goods-count-toggle-icon">
+                          <use xlink:href="#icon-minus"></use>
+                        </svg>
+                      </button>
+  
+                      <output class="product-card__goods-count-output" title="Count of positions for this product in the basket" aria-label="Count of positions for this product in the basket">0</output>
+  
+                      <button type="button" class="product-card__goods-count-toggle product-card__goods-count-toggle--add" title="Add one more item of this product to the basket" aria-label="Add one more item of this product to the basket">
+                        <svg width="20" height="20" class="product-card__goods-count-toggle-icon">
+                          <use xlink:href="#icon-plus"></use>
+                        </svg>
+                      </button>
+                    </div>
+  
+                    <span class="product-card__total-cost" title="Total cost of this product" aria-label="Total cost of this product">525</span>
+                  </div>
+                </div>
+
+                <button type="button" class="product-card__remove-button" title="Remove this product from the basket" aria-label="Remove this product from the basket">Remove item</button>
+              </article>
+            </li>
+
+            <li class="basket-content__products-item">
+              <article class="product-card">
+                <h3 class="visually-hidden">Product card</h3>
+
+                <picture>
+                  <img src="" width="100" height="100" class="product-card__preview" alt="Timeless Sneakers from the «Nike-SP 2021» collection.">
+                </picture>
+
+                <div class="product-card__content">
+                  <p class="product-card__description">Timeless sneakers — a joint development of the «Nike» and «Sborka Project» companies — will provide you with a comfortable movement in any weather and landscape conditions.</p>
+  
+                  <div class="product-card__quantity-management">
+                    <div class="product-card__goods-count">
+                      <button type="button" class="product-card__goods-count-toggle product-card__goods-count-toggle--subtract" title="Remove one item of this product from the basket" aria-label="Remove one item of this product from the basket">
+                        <svg width="20" height="20" class="product-card__goods-count-toggle-icon">
+                          <use xlink:href="#icon-minus"></use>
+                        </svg>
+                      </button>
+  
+                      <output class="product-card__goods-count-output" title="Count of positions for this product in the basket" aria-label="Count of positions for this product in the basket">0</output>
+  
+                      <button type="button" class="product-card__goods-count-toggle product-card__goods-count-toggle--add" title="Add one more item of this product to the basket" aria-label="Add one more item of this product to the basket">
+                        <svg width="20" height="20" class="product-card__goods-count-toggle-icon">
+                          <use xlink:href="#icon-plus"></use>
+                        </svg>
+                      </button>
+                    </div>
+  
+                    <span class="product-card__total-cost" title="Total cost of this product" aria-label="Total cost of this product">525</span>
+                  </div>
+                </div>
+
+                <button type="button" class="product-card__remove-button" title="Remove this product from the basket" aria-label="Remove this product from the basket">Remove item</button>
+              </article>
+            </li>
+          </ul>
+        </section>
+
+        <section class="promo-code-section">
+          <h2 class="promo-code-section__title">Promo code</h2>
+
+          <form action="" method="post" enctype="multipart/form-data" class="promo-code-section__form promo-code-form">
+            <input type="text" placeholder="If you have one, enter the promo code...">
+            <button type="submit" class="promo-code-form__submit-button" title="Check and apply promo code" aria-label="Check and apply promo code">Apply</button>
+          </form>
+        </section>
+
+        <section class="total-purchase-cost">
+          <h2 class="visually-hidden">Total purchase cost</h2>
+
+          <table class="total-purchase-cost__table payment-table">
+            <tbody class="payment-table__body">
+              <tr class="payment-table__row">
+                <th class="payment-table__row-heading">Subtotal</th>
+                <td class="payment-table__row-data">1050</td>
+              </tr>
+
+              <tr class="payment-table__row">
+                <th class="payment-table__row-heading">Tax</th>
+                <td class="payment-table__row-data">100</td>
+              </tr>
+
+              <tr class="payment-table__row">
+                <th class="payment-table__row-heading">Shipping</th>
+                <td class="payment-table__row-data">150</td>
+              </tr>
+            </tbody>
+
+            <tfoot class="payment-table__footer">
+              <tr class="payment-table__row">
+                <th class="payment-table__row-heading">Total</th>
+                <td class="payment-table__row-data">1300</td>
+              </tr>
+            </tfoot>
+          </table>
+        </section>
+      </div>
+    </main>
+
 {% endblock content %}
