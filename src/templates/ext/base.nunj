@@ -1,7 +1,7 @@
 {% from "./_head-scripts.nunj" import headScripts %}
 
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 	<head>
 		<!-- Front-end by sborkaproject.com -->
 		<meta charset="utf-8" />
@@ -9,7 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="description" content="«SP.Shop — unique merchandise store of the company «Sborka Project».">
 
-		<title>{% block title %}Project{% endblock %}</title>
+		<title>{% block title %}SP.shop{% endblock %}</title>
 
 		{{ headScripts() }}
 
