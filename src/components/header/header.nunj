@@ -1,0 +1,37 @@
+{% from "../navigation-menu/navigation-menu.nunj" import navigationMenu %}
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo site-header__logo">
+      <img src="{% inline 'logo.svg' %}" width="89" height="32" alt="«SP.shop» logo">
+    </a>
+
+    {{ navigationMenu() }}
+
+    <div class="site-header__controls">
+      <div class="site-header__search search-field">
+        <button type="button" class="search-field__button" title="Site search: click to Start..." aria-label="Site search: click to Start...">
+          {{ icon({
+              iconName: 'search',
+              className: 'search-field__button-icon',
+              width: 24,
+              height: 24
+            })
+          }}
+        </button>
+
+        <input type="text" class="search-field__input" placeholder="Enter merch name...">
+      </div>
+
+      <button type="button" class="site-header__basket" title="Items in your cart: 0" aria-label="Items in your cart: 0">
+        {{ icon({
+            iconName: 'cart',
+            className: 'search-field__button-icon',
+            width: 24,
+            height: 21
+          })
+        }}
+      </button>
+    </div>
+  </div>
+</header>

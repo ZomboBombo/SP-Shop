@@ -1,0 +1,10 @@
+<section class="mock-section">
+  <h2 class="mock-section__title">Mock section</h2>
+
+  <p class="mock-section__description">This is a mock section - an empty section not provided in the layout.</p>
+
+  <div class="mock-section__buttons-box">
+    <button type="button" class="mock-section__button" title="Back to the previous step of payment" aria-label="Back to the previous step of payment">Back</button>
+    <button type="submit" class="mock-section__button mock-section__button--submit" title="Go to the next step of payment" aria-label="Go to the next step of payment">Next step</button>
+  </div>
+</section>

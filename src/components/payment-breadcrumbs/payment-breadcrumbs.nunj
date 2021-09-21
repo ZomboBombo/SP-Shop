@@ -1,0 +1,12 @@
+{% macro paymentBreadcrumbs() %}
+  <ol class="payment-steps__list payment-breadcrumbs">
+    {% for item in paymentBreadcrumbsItems %}
+      <li class="payment-breadcrumbs__item">
+        <button type="button" class="payment-breadcrumbs__step-button" data-id="{{ item.breadcrumbsStepId }}">
+          <b class="payment-breadcrumbs__step-button-counter">{{ item.breadcrumbsStepCounter }}</b>
+          <span class="payment-breadcrumbs__step-button-name">{{ item.breadcrumbsStepName }}</span>
+        </button>
+      </li>
+    {% endfor%}
+  </ol>
+{% endmacro %}
