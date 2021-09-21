@@ -1,58 +1,61 @@
 // === ИМПРОТИРОВАННЫЕ ФАЙЛЫ СТИЛЕЙ ===
 @import 'constants';
 
-
 // === ГЛОБАЛЬНЫЕ СТИЛИ ===
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 html {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 
-  width: 100vw;
-  min-width: $width--mobile;
-  min-height: 100vh;
+	width: 100vw;
+	min-width: $width--mobile;
+	min-height: 100vh;
 
-  font-family: $default-font;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 22px;
-  color: $white;
+	font-family: $default-font;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 22px;
+	color: $black;
 
-  // *** Для устранения горизонтальных скроллов в IE 11, Edge и Safari ***
-  overflow-x: hidden;
+	// *** Для устранения горизонтальных скроллов в IE 11, Edge и Safari ***
+	overflow-x: hidden;
 }
 
 // --- Настройка для автоматического "прилипания" футера к низу страницы ---
 footer {
-  margin-top: auto;
+	margin-top: auto;
 }
 
+// === Класс для скрытия SVG-спрайта ===
+.invisible-container {
+	display: none;
+}
 
 // === Класс для доступного скрытия элементов ===
 .visually-hidden {
-  position: absolute;
+	position: absolute;
 
-  width: 1px;
-  height: 1px;
+	width: 1px;
+	height: 1px;
 
-  margin: -1px;
-  padding: 0;
+	margin: -1px;
+	padding: 0;
 
-  border: 0;
+	border: 0;
 
-  overflow: hidden;
-  white-space: nowrap;
+	overflow: hidden;
+	white-space: nowrap;
 
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
 }
