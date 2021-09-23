@@ -1,7 +1,7 @@
 {% from "../navigation-menu/navigation-menu.nunj" import navigationMenu %}
 
 <header class="site-header">
-  <div class="container">
+  <div class="container site-header__wrapper">
     <a class="logo site-header__logo">
       <img src="{% inline 'logo.svg' %}" width="89" height="32" alt="«SP.shop» logo">
     </a>
@@ -20,13 +20,15 @@
           }}
         </button>
 
-        <input type="text" class="search-field__input" placeholder="Enter merch name...">
+        <div class="search-field__input-box">
+          <input type="text" class="search-field__input" placeholder="Enter merch name...">
+        </div>
       </div>
 
       <button type="button" class="site-header__basket" title="Items in your cart: 0" aria-label="Items in your cart: 0">
         {{ icon({
             iconName: 'cart',
-            className: 'search-field__button-icon',
+            className: 'site-header__basket-icon',
             width: 24,
             height: 21
           })
