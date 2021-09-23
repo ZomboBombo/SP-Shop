@@ -1,0 +1,88 @@
+.search-field {
+	position: relative;
+	z-index: 1;
+}
+
+.search-field__button {
+	position: relative;
+	z-index: 3;
+
+	width: 42px;
+	height: 42px;
+
+	background-color: transparent;
+	border: none;
+	border-radius: 3px;
+	border-bottom-left-radius: 0;
+
+	cursor: pointer;
+
+	$properties-for-transition: background-color, opacity;
+
+	@include transition-settings($properties-for-transition);
+}
+
+.search-field__button-icon {
+	$properties-for-transition: fill;
+
+	@include transition-settings($properties-for-transition);
+}
+
+.search-field__input-box {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	z-index: 2;
+
+	padding-right: 46px;
+
+	border-bottom: 1px solid transparent;
+	border-bottom-right-radius: 3px;
+
+	$properties-for-transition: border-color;
+
+	@include transition-settings($properties-for-transition);
+}
+
+.search-field__input {
+	height: 42px;
+
+	border: none;
+	opacity: 0;
+
+	$properties-for-transition: opacity;
+
+	@include transition-settings($properties-for-transition);
+}
+
+/*
+*** Стили для интерактивности ***
+*/
+.search-field__button:hover,
+.search-field__button:focus {
+	background-color: $border-color;
+}
+
+.search-field__button:active {
+	opacity: 0.7;
+}
+
+.search-field__button:hover > .search-field__button-icon,
+.search-field__button:focus > .search-field__button-icon {
+	fill: $white;
+}
+
+.search-field__button:hover ~ .search-field__input-box,
+.search-field__button:focus ~ .search-field__input-box,
+.search-field__input-box:hover {
+	border-bottom-color: $border-color;
+}
+
+.search-field__button:hover ~ .search-field__input-box > .search-field__input,
+.search-field__button:focus ~ .search-field__input-box > .search-field__input,
+.search-field__input-box:hover > .search-field__input,
+.search-field__input:hover,
+.search-field__input:focus {
+	opacity: 1;
+}
