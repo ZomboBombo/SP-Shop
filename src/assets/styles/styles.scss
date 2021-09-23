@@ -10,11 +10,17 @@
 /* ***************************
 *** 2. Универсальные стили ***
 *************************** */
-@import 'layout';
+@import 'utils/container';
+@import 'utils/button';
 
 /* *************************
 *** 3. Стили компонентов ***
 ************************* */
+
+// --- 3.1) стили Шапки сайта ---
+@import '../../components/header/site-header';
+@import '../../components/header/search-field';
+@import '../../components/navigation-menu/navigation-menu';
 
 /* *********************
 *** 4. Стили страниц ***
