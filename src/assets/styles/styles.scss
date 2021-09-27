@@ -12,6 +12,7 @@
 *************************** */
 @import 'utils/container';
 @import 'utils/button';
+@import 'utils/section-title';
 
 /* *************************
 *** 3. Стили компонентов ***
@@ -21,6 +22,10 @@
 @import '../../components/header/site-header';
 @import '../../components/header/search-field';
 @import '../../components/navigation-menu/navigation-menu';
+
+// --- 3.2) стили Основного содержимого ---
+@import '../../components/payment-breadcrumbs/payment-breadcrumbs';
+@import '../../components/mock-section/mock-section';
 
 /* *********************
 *** 4. Стили страниц ***
