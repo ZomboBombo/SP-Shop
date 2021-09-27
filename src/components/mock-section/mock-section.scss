@@ -1,0 +1,42 @@
+/*
+* *** Идея фонового заплнителя взята из статьи "Красивые градиенты",
+* *** ссылка на данную статью — https://html5book.ru/krasivye-gradienty/
+*/
+.mock-section {
+	margin: 0;
+	padding: 0;
+	padding-top: 60px;
+	padding-right: 40px;
+	padding-bottom: 60px;
+	padding-left: 40px;
+
+	background-color: $placeholder-bg-color;
+	background-image: linear-gradient(transparent 49px, $white 49px),
+		linear-gradient(90deg, transparent 49px, $white 49px),
+		linear-gradient(transparent 9px, rgba($white, 0.3) 9px),
+		linear-gradient(90deg, transparent 9px, rgba($white, 0.3) 9px);
+	background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+	background-position: center center;
+}
+
+.mock-section__description {
+	margin: 0;
+	margin-top: 20px;
+	padding: 0;
+
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 16px;
+	color: $black;
+}
+
+.mock-section__buttons-box {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	width: 100%;
+	max-width: 400px;
+
+	margin-top: 40px;
+}
