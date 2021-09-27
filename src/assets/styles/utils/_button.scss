@@ -1,11 +1,47 @@
 .button {
+	width: auto;
+	min-width: 92px;
+	min-height: 40px;
+
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 24px;
 	text-align: center;
-	color: $white;
+	color: $black;
 
-	background-color: transparent;
-	border: none;
+	background-color: $white;
+	border: 1px solid $border-color;
 	border-radius: 3px;
+
+	cursor: pointer;
+
+	$properties-for-transition: box-shadow, transform, opacity;
+
+	@include transition-settings($properties-for-transition);
+
+	&--active {
+		color: $white;
+		background-color: $sp-shop--blue;
+		border-color: $sp-shop--blue;
+	}
+}
+
+/*
+*** Стили состояний элементов ***
+*/
+.button:hover,
+.button:focus {
+	box-shadow: 0 0 10px 0 rgba($black, 0.5);
+}
+
+.button:active {
+	transform: scale(0.96);
+	opacity: 0.7;
+}
+
+.button:disabled {
+	cursor: default;
+	box-shadow: none;
+	transform: scale(1);
+	opacity: 0.5;
 }
