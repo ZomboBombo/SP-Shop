@@ -6,11 +6,18 @@ $width--desktop: 1023px;
 $width--max: 1640px;
 
 // *** для Шрифтов ***
-$default-font: /* --- [ вставить нужный нестандартный шрифт ] --- */ 'Arial', sans-serif;
-$additional-font: /* --- [ вставить нужный нестандартный шрифт ] --- */ 'Arial', sans-serif;
+$default-font: 'Roboto', 'Arial', sans-serif;
 
 // *** для Цветов ***
 $white: #ffffff;
 $black: #000000;
 
 $border-color: #cfcfcf;
+$placeholder-bg-color: #ededf1;
+
+$payment-step--disabled: #d5d5d5;
+
+$sp-shop--blue: #3366ff;
+
+// *** Утилитарные переменные ***
+$payment-steps-border-padding: 42px;
