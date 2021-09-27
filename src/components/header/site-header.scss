@@ -42,11 +42,11 @@
 }
 
 /*
-*** Стили для интерактивности ***
+*** Стили состояний элементов ***
 */
 .site-header__basket:hover,
 .site-header__basket:focus {
-	background-color: $border-color;
+	background-color: $sp-shop--blue;
 }
 
 .site-header__basket:active {

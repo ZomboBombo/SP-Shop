@@ -57,11 +57,11 @@
 }
 
 /*
-*** Стили для интерактивности ***
+*** Стили состояний элементов ***
 */
 .search-field__button:hover,
 .search-field__button:focus {
-	background-color: $border-color;
+	background-color: $sp-shop--blue;
 }
 
 .search-field__button:active {
@@ -76,7 +76,7 @@
 .search-field__button:hover ~ .search-field__input-box,
 .search-field__button:focus ~ .search-field__input-box,
 .search-field__input-box:hover {
-	border-bottom-color: $border-color;
+	border-bottom-color: $sp-shop--blue;
 }
 
 .search-field__button:hover ~ .search-field__input-box > .search-field__input,
