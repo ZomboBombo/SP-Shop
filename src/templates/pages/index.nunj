@@ -22,7 +22,7 @@
       <h1 class="visually-hidden">«SP.shop» — store of unique merch from the "Sborka Project" company.</h1>
 
       <div class="site-main-content__main-window">
-        <section class="payment-steps">
+        <section class="payment-steps-interface">
           <h2 class="visually-hidden">Payment processing steps</h2>
 
           {{ paymentBreadcrumbs() }}
@@ -38,7 +38,7 @@
 
         <div class="payment-step payment-step--active" data-id="billing-step">
           <section class="billing-information">
-            <h2 class="billing-information__title">Billing information</h2>
+            <h2 class="section-title billing-information__title">Billing information</h2>
 
             <div class="billing-information__payment-options billing-payment-options">
               <input type="radio" name="billing-payment-option" class="billing-payment-options__input" id="billing-payment-credit-card" checked>
