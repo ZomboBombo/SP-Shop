@@ -27,7 +27,14 @@
 @import '../../components/payment-breadcrumbs/payment-breadcrumbs';
 @import '../../components/mock-section/mock-section';
 
-/* *********************
-*** 4. Стили страниц ***
-********************* */
+/* **********************
+*** 4. Основные стили ***
+********************** */
 @import 'pages/main';
+
+@import 'bem-blocks/payment-steps-interface';
+@import 'bem-blocks/payment-step';
+@import 'bem-blocks/billing-information';
+@import 'bem-blocks/billing-payment-options';
+@import 'bem-blocks/credit-card-form';
+@import 'bem-blocks/more-info';
