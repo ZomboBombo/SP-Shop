@@ -1,0 +1,80 @@
+.more-info {
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
+
+	margin: 0;
+	padding: 0;
+
+	vertical-align: middle;
+}
+
+.more-info__pointer {
+	position: relative;
+
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 13px;
+	height: 13px;
+
+	margin-left: 5px;
+
+	font-size: 10px;
+	font-weight: 400;
+	line-height: 15px;
+	letter-spacing: 0.2px;
+	color: $black;
+	vertical-align: middle;
+
+	background-color: $more-info-bg-color;
+	border: none;
+	border-radius: 50%;
+
+	cursor: help;
+}
+
+.more-info__description {
+	position: absolute;
+	top: calc(100% + $more-info-margin-top);
+	left: 0;
+	z-index: -1;
+
+	display: block;
+
+	width: auto;
+	min-width: 250px;
+	min-height: 50px;
+
+	opacity: 0;
+
+	padding-top: 8px;
+	padding-right: 8px;
+	padding-bottom: 8px;
+	padding-left: 8px;
+
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 24px;
+	text-align: left;
+
+	background-color: $more-info-bg-color;
+	border: 1px solid $border-color;
+	border-radius: 3px;
+
+	box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.19);
+
+	$properties-for-transition: z-index, width, height, opacity;
+
+	@include transition-settings($properties-for-transition);
+}
+
+/*
+*** Стили состояний элементов ***
+*/
+.more-info__pointer:hover > .more-info__description,
+.more-info__pointer:focus > .more-info__description {
+	z-index: 1;
+	opacity: 1;
+}

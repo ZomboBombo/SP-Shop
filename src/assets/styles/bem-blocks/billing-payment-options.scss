@@ -1,0 +1,70 @@
+.billing-payment-options__label {
+	position: relative;
+
+	display: inline-flex;
+	align-items: center;
+
+	margin-right: 82px;
+	padding: 0;
+
+	$indent-from-radio: 10px;
+	padding-left: calc($billing-information-custom-radio-sizes--big-circle + $indent-from-radio);
+
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 16px;
+	vertical-align: middle;
+	color: $black;
+
+	&::before,
+	&::after {
+		content: '';
+
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+
+		display: block;
+
+		border-radius: 50%;
+	}
+
+	&::before {
+		left: 0;
+
+		width: $billing-information-custom-radio-sizes--big-circle;
+		height: $billing-information-custom-radio-sizes--big-circle;
+
+		background-color: transparent;
+		border: 1px solid $border-color;
+	}
+
+	&::after {
+		display: none;
+
+		left: calc(
+			$BILLING_INFORMATION_AVERAGE_COEFFICIENT *
+				(
+					$billing-information-custom-radio-sizes--big-circle -
+						$billing-information-custom-radio-sizes--small-circle
+				)
+		);
+
+		width: $billing-information-custom-radio-sizes--small-circle;
+		height: $billing-information-custom-radio-sizes--small-circle;
+
+		background-color: $sp-shop--blue;
+	}
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+}
+
+/*
+*** Настройка отображения кастомного флага радиокнопки,
+*** когда она "чекнута".
+*/
+.billing-payment-options__input:checked + .billing-payment-options__label::after {
+	display: block;
+}

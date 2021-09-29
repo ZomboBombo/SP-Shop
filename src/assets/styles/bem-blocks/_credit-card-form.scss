@@ -1,0 +1,201 @@
+.credit-card-form__card-box {
+	position: relative;
+
+	/*
+  *** Мини-настройки позиционирования "кредитной карты"
+  *** для более точного соответствия макету.
+  */
+	$value-of-padding: 30px;
+	left: -($value-of-padding);
+
+	width: 100%;
+	max-width: 550px;
+	min-height: 298px;
+
+	margin-bottom: 42px;
+	padding-top: 20px;
+	padding-right: $value-of-padding;
+	padding-bottom: 20px;
+	padding-left: $value-of-padding;
+
+	border: 1px solid $border-color;
+	border-radius: 5px;
+
+	box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.19);
+}
+
+.credit-card-form__label {
+	display: flex;
+	flex-direction: column;
+
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 24px;
+	color: #555770;
+}
+
+.credit-card-form__fieldset {
+	margin: 0;
+	margin-top: 20px;
+	padding: 0;
+
+	border: none;
+}
+
+.credit-card-form__fieldset-wrapper {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-column-gap: 30px;
+}
+
+.credit-card-form__additional-info {
+	display: flex;
+}
+
+.credit-card-form__additional-info > .credit-card-form__label {
+	width: 100%;
+	max-width: 100px;
+
+	margin-right: 30px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.credit-card-form__input {
+	width: 100%;
+
+	padding-top: 8px;
+	padding-right: 10px;
+	padding-bottom: 8px;
+	padding-left: 10px;
+
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 24px;
+
+	background-color: $placeholder-bg-color;
+	border: none;
+	border-radius: 3px;
+
+	$properties-for-transition: background-color;
+
+	@include transition-settings($properties-for-transition, 0.1s);
+
+	&::placeholder {
+		color: #8e90a6;
+	}
+}
+
+.credit-card-form__checkbox-label {
+	position: relative;
+
+	display: block;
+
+	margin-bottom: 14px;
+	padding: 0;
+
+	$indent-from-checkbox: 8px;
+	padding-left: calc(
+		$billing-information-custom-checkbox-sizes--big-square + $indent-from-checkbox
+	);
+
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 16px;
+	color: #8c8c8c;
+
+	&::before,
+	&::after {
+		content: '';
+
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+
+		display: block;
+	}
+
+	&::before {
+		left: 0;
+
+		width: $billing-information-custom-checkbox-sizes--big-square;
+		height: $billing-information-custom-checkbox-sizes--big-square;
+
+		background-color: transparent;
+		border: 1px solid $border-color;
+	}
+
+	&::after {
+		display: none;
+
+		left: calc(
+			$BILLING_INFORMATION_AVERAGE_COEFFICIENT *
+				(
+					$billing-information-custom-checkbox-sizes--big-square -
+						$billing-information-custom-checkbox-sizes--small-square
+				)
+		);
+
+		width: $billing-information-custom-checkbox-sizes--small-square;
+		height: $billing-information-custom-checkbox-sizes--small-square;
+
+		background-color: $sp-shop--blue;
+	}
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+.credit-card-form__link {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 16px;
+	color: $black;
+	text-decoration: none;
+}
+
+.credit-card-form__buttons-box {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+
+	width: 100%;
+
+	margin-top: 42px;
+}
+
+.credit-card-form__button {
+	&--submit {
+		width: 100%;
+		max-width: 125px;
+	}
+}
+
+/*
+*** Стили состояний элементов ***
+*/
+.credit-card-form__input:hover,
+.credit-card-form__input:focus {
+	background-color: rgba($sp-shop--blue, 0.1);
+}
+
+.credit-card-form__link:hover,
+.credit-card-form__link:focus {
+	text-decoration: underline;
+}
+
+.credit-card-form__link:active {
+	opacity: 0.7;
+}
+
+/*
+*** Настройка отображения кастомного флага радиокнопки,
+*** когда она "чекнута".
+*/
+.credit-card-form__checkbox:checked + .credit-card-form__checkbox-label::after {
+	display: block;
+}
