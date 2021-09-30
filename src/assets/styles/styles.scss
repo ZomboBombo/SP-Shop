@@ -13,6 +13,7 @@
 @import 'utils/container';
 @import 'utils/button';
 @import 'utils/section-title';
+@import 'utils/form-input';
 
 /* *************************
 *** 3. Стили компонентов ***
@@ -27,6 +28,10 @@
 @import '../../components/payment-breadcrumbs/payment-breadcrumbs';
 @import '../../components/mock-section/mock-section';
 
+// --- 3.3) стили Сайдбара ---
+@import '../../components/sidebar/sidebar';
+@import '../../components/basket-products/product-card';
+
 /* **********************
 *** 4. Основные стили ***
 ********************** */
@@ -38,3 +43,7 @@
 @import 'bem-blocks/billing-payment-options';
 @import 'bem-blocks/credit-card-form';
 @import 'bem-blocks/more-info';
+@import 'bem-blocks/basket-content';
+@import 'bem-blocks/promo-code-section';
+@import 'bem-blocks/promo-code-form';
+@import 'bem-blocks/payment-table';
