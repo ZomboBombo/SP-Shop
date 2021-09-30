@@ -1,48 +1,48 @@
 {% from "../basket-products/basket-products.nunj" import basketProducts %}
 
-<section class="site-main-content__sidebar sidebar">
+<section class="sidebar">
   <h2 class="visually-hidden">Sidebar</h3>
 
-  <section class="basket-content">
-    <h3 class="basket-content__title">Basket content</h3>
+  <section class="sidebar__section basket-content">
+    <h3 class="section-title basket-content__title">Basket content</h3>
 
     {{ basketProducts() }}
   </section>
 
-  <section class="promo-code-section">
-    <h3 class="promo-code-section__title">Promo code</h3>
+  <section class="sidebar__section promo-code-section">
+    <h3 class="section-title promo-code-section__title">Promo code</h3>
 
     <form action="" method="post" enctype="multipart/form-data" class="promo-code-section__form promo-code-form">
-      <input type="text" placeholder="If you have one, enter the promo code...">
-      <button type="submit" class="promo-code-form__submit-button" title="Check and apply promo code" aria-label="Check and apply promo code">Apply</button>
+      <input type="text" class="form-input promo-code-form__input" placeholder="If you have one, enter the promo code...">
+      <button type="submit" class="button button--active promo-code-form__submit-button" title="Check and apply promo code" aria-label="Check and apply promo code">Apply</button>
     </form>
   </section>
 
-  <section class="total-purchase-cost">
+  <section class="sidebar__section total-purchase-cost">
     <h3 class="visually-hidden">Total purchase cost</h3>
 
     <table class="total-purchase-cost__table payment-table">
       <tbody class="payment-table__body">
         <tr class="payment-table__row">
           <th class="payment-table__row-heading">Subtotal</th>
-          <td class="payment-table__row-data">1050</td>
+          <td class="payment-table__row-data">$ 1050</td>
         </tr>
 
         <tr class="payment-table__row">
           <th class="payment-table__row-heading">Tax</th>
-          <td class="payment-table__row-data">100</td>
+          <td class="payment-table__row-data">$ 100</td>
         </tr>
 
         <tr class="payment-table__row">
           <th class="payment-table__row-heading">Shipping</th>
-          <td class="payment-table__row-data">150</td>
+          <td class="payment-table__row-data">$ 150</td>
         </tr>
       </tbody>
 
       <tfoot class="payment-table__footer">
         <tr class="payment-table__row">
-          <th class="payment-table__row-heading">Total</th>
-          <td class="payment-table__row-data">1300</td>
+          <th class="payment-table__row-heading payment-table__row-heading--bold">Total</th>
+          <td class="payment-table__row-data payment-table__row-data--bold">$ 1300</td>
         </tr>
       </tfoot>
     </table>

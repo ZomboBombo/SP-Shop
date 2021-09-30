@@ -23,7 +23,7 @@
 
             <div class="product-card__quantity-management">
               <div class="product-card__goods-count">
-                <button type="button" class="product-card__goods-count-toggle product-card__goods-count-toggle--subtract" title="Remove one item of this product from the basket" aria-label="Remove one item of this product from the basket">
+                <button type="button" class="product-card__goods-count-toggle product-card__goods-count-toggle--subtract" title="Remove one item of this product from the basket" aria-label="Remove one item of this product from the basket" disabled>
                   {{ icon({
                       iconName: 'minus',
                       className: 'product-card__goods-count-toggle-icon',
@@ -33,7 +33,7 @@
                   }}
                 </button>
 
-                <output class="product-card__goods-count-output" title="Count of positions for this product in the basket" aria-label="Count of positions for this product in the basket">0</output>
+                <output class="product-card__goods-count-output" title="Count of positions for this product in the basket" aria-label="Count of positions for this product in the basket">1</output>
 
                 <button type="button" class="product-card__goods-count-toggle product-card__goods-count-toggle--add" title="Add one more item of this product to the basket" aria-label="Add one more item of this product to the basket">
                   {{ icon({
@@ -49,8 +49,10 @@
               <span class="product-card__total-cost" title="Total cost of this product" aria-label="Total cost of this product">{{ item.basketProductCost }}</span>
             </div>
           </div>
-
-          <button type="button" class="product-card__remove-button" title="Remove this product from the basket" aria-label="Remove this product from the basket">Remove item</button>
+          
+          <div class="product-card__remove-button-box">
+            <button type="button" class="product-card__remove-button" title="Remove this product from the basket" aria-label="Remove this product from the basket">Remove item</button>
+          </div>
         </article>
       </li>
     {% endfor %}
