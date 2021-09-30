@@ -17,11 +17,18 @@
 			<link rel="stylesheet" type="text/css" href="assets/css/styles.css?hash" />
 		{% endblock stylesheets %}
     
-    {# *******************************
-    *** Место для прелоада шрифтов ***
-    ******************************* #}
+
+    {# ********************************
+    ********* Прелоад шрифтов *********
+    ******************************** #}
+    {% block fontspreload %}
+      <link rel="preload" href="assets/fonts/Roboto-Regular.woff2" as="font" crossorigin>
+    {% endblock fontspreload %}
 	</head>
 	<body>
+
+    {% block header %}
+    {% endblock header %}
 
     {% block content %}
     {% endblock content %}
