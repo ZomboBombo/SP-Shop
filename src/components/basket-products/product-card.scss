@@ -1,0 +1,176 @@
+.product-card {
+	position: relative;
+
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.product-card__preview {
+	display: block;
+	margin-right: 12px;
+}
+
+.product-card__content {
+	width: 100%;
+	max-width: 144px;
+}
+
+.product-card__description {
+	margin: 0;
+	padding: 0;
+
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 16px;
+	color: $black;
+}
+
+.product-card__quantity-management {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+
+	margin-top: 15px;
+}
+
+.product-card__goods-count {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+
+	width: 84px;
+}
+
+.product-card__goods-count-toggle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: auto;
+	height: auto;
+
+	margin: 0;
+	padding: 0;
+
+	background-color: transparent;
+	border: none;
+	border-radius: 50%;
+
+	cursor: pointer;
+
+	$properties-for-transition: background-color, box-shadow, transform, opacity;
+
+	@include transition-settings($properties-for-transition);
+}
+
+.product-card__goods-count-output,
+.product-card__total-cost {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 16px;
+	color: $black;
+}
+
+.product-card__remove-button-box {
+	position: absolute;
+	top: 0;
+	left: 100%;
+
+	width: auto;
+	height: auto;
+}
+
+.product-card__remove-button {
+	position: relative;
+
+	display: block;
+
+	width: 18px;
+	height: 18px;
+
+	font-size: 0;
+
+	background-color: transparent;
+	border: none;
+
+	cursor: pointer;
+
+	$properties-for-transition: transform, opacity;
+
+	@include transition-settings($properties-for-transition, 0.4s);
+
+	&::before,
+	&::after {
+		content: '';
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+		display: block;
+
+		width: calc(100% + $product-card-remove-button--diagonal-coefficient);
+		height: 1px;
+
+		background-color: $border-color;
+	}
+
+	&::before {
+		transform: translate(-50%, -50%) rotate(45deg);
+	}
+
+	&::after {
+		transform: translate(-50%, -50%) rotate(-45deg);
+	}
+}
+
+/*
+*** Стили состояний элементов ***
+*/
+.product-card__goods-count-toggle:hover,
+.product-card__goods-count-toggle:focus {
+	background-color: $sp-shop--blue;
+	box-shadow: 0 0 0 1px $sp-shop--blue;
+	transform: scale(1.2);
+}
+
+.product-card__goods-count-toggle:active {
+	transform: scale(1);
+	opacity: 0.7;
+}
+
+.product-card__goods-count-toggle:disabled {
+	background-color: transparent;
+	box-shadow: none;
+	transform: scale(1);
+	opacity: 0.5;
+	cursor: default;
+}
+
+.product-card__goods-count-toggle:hover > .product-card__goods-count-toggle-icon,
+.product-card__goods-count-toggle:focus > .product-card__goods-count-toggle-icon {
+	fill: $white;
+}
+
+.product-card__goods-count-toggle:disabled > .product-card__goods-count-toggle-icon {
+	fill: inherit;
+}
+
+.product-card__remove-button:hover,
+.product-card__remove-button:focus {
+	transform: scale(1.2) rotate(180deg);
+}
+
+.product-card__remove-button:hover::before,
+.product-card__remove-button:hover::after,
+.product-card__remove-button:focus::before,
+.product-card__remove-button:focus::after {
+	background-color: rgba($black, 0.5);
+}
+
+.product-card__remove-button:active {
+	transform: scale(1);
+	opacity: 0.7;
+}

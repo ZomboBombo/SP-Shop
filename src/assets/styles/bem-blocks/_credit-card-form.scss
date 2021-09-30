@@ -18,6 +18,7 @@
 	padding-bottom: 20px;
 	padding-left: $value-of-padding;
 
+	background-color: $white;
 	border: 1px solid $border-color;
 	border-radius: 5px;
 
@@ -115,6 +116,10 @@
 		transform: translateY(-50%);
 
 		display: block;
+
+		$properties-for-transition: background-color, border-color, opacity;
+
+		@include transition-settings($properties-for-transition, 0.1s);
 	}
 
 	&::before {
@@ -189,6 +194,22 @@
 }
 
 .credit-card-form__link:active {
+	opacity: 0.7;
+}
+
+.credit-card-form__checkbox:hover + .credit-card-form__checkbox-label::before,
+.credit-card-form__checkbox:focus + .credit-card-form__checkbox-label::before {
+	background-color: $sp-shop--blue;
+	border-color: $sp-shop--blue;
+}
+
+.credit-card-form__checkbox:hover + .credit-card-form__checkbox-label::after,
+.credit-card-form__checkbox:focus + .credit-card-form__checkbox-label::after {
+	background-color: $white;
+}
+
+.credit-card-form__checkbox:active + .credit-card-form__checkbox-label::before,
+.credit-card-form__checkbox:active + .credit-card-form__checkbox-label::after {
 	opacity: 0.7;
 }
 

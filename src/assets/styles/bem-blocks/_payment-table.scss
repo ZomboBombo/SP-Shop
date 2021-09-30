@@ -1,0 +1,20 @@
+.payment-table {
+	width: 100%;
+}
+
+.payment-table__row-heading,
+.payment-table__row-data {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 34px;
+	text-align: left;
+
+	&--bold {
+		font-size: 18px;
+		font-weight: 700;
+	}
+}
+
+.payment-table__row-data {
+	text-align: right;
+}

@@ -1,0 +1,16 @@
+.basket-content__products {
+	@include markerless;
+
+	display: flex;
+	flex-direction: column;
+
+	margin-top: 30px;
+}
+
+.basket-content__products-item {
+	margin-bottom: 40px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}

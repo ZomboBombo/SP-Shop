@@ -1,0 +1,19 @@
+.site-main-content {
+	display: flex;
+	margin-bottom: 120px;
+}
+
+.site-main-content__main-window {
+	flex-grow: 1;
+
+	width: 100%;
+
+	padding: 0;
+	padding-right: 66px;
+	padding-left: 66px;
+}
+
+.site-main-content__sidebar {
+	width: 100%;
+	max-width: 410px;
+}

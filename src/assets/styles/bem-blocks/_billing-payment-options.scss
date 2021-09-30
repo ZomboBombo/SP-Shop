@@ -16,6 +16,8 @@
 	vertical-align: middle;
 	color: $black;
 
+	cursor: pointer;
+
 	&::before,
 	&::after {
 		content: '';
@@ -27,6 +29,10 @@
 		display: block;
 
 		border-radius: 50%;
+
+		$properties-for-transition: background-color, border-color, opacity;
+
+		@include transition-settings($properties-for-transition, 0.1s);
 	}
 
 	&::before {
@@ -59,6 +65,25 @@
 	&:last-of-type {
 		margin-right: 0;
 	}
+}
+
+/*
+*** Стили состояний элементов ***
+*/
+.billing-payment-options__input:hover + .billing-payment-options__label::before,
+.billing-payment-options__input:focus + .billing-payment-options__label::before {
+	background-color: $sp-shop--blue;
+	border-color: $sp-shop--blue;
+}
+
+.billing-payment-options__input:hover + .billing-payment-options__label::after,
+.billing-payment-options__input:focus + .billing-payment-options__label::after {
+	background-color: $white;
+}
+
+.billing-payment-options__input:active + .billing-payment-options__label::before,
+.billing-payment-options__input:active + .billing-payment-options__label::after {
+	opacity: 0.7;
 }
 
 /*
