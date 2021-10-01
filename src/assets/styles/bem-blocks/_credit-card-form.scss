@@ -10,6 +10,7 @@
 
 	width: 100%;
 	max-width: 550px;
+	min-width: 438px;
 	min-height: 298px;
 
 	margin-bottom: 42px;
@@ -61,31 +62,6 @@
 
 	&:last-child {
 		margin-right: 0;
-	}
-}
-
-.credit-card-form__input {
-	width: 100%;
-
-	padding-top: 8px;
-	padding-right: 10px;
-	padding-bottom: 8px;
-	padding-left: 10px;
-
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 24px;
-
-	background-color: $placeholder-bg-color;
-	border: none;
-	border-radius: 3px;
-
-	$properties-for-transition: background-color;
-
-	@include transition-settings($properties-for-transition, 0.1s);
-
-	&::placeholder {
-		color: #8e90a6;
 	}
 }
 

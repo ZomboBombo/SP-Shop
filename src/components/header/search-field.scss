@@ -10,22 +10,7 @@
 	width: 42px;
 	height: 42px;
 
-	background-color: transparent;
-	border: none;
-	border-radius: 3px;
 	border-bottom-left-radius: 0;
-
-	cursor: pointer;
-
-	$properties-for-transition: background-color, opacity;
-
-	@include transition-settings($properties-for-transition);
-}
-
-.search-field__button-icon {
-	$properties-for-transition: fill;
-
-	@include transition-settings($properties-for-transition);
 }
 
 .search-field__input-box {
@@ -59,20 +44,6 @@
 /*
 *** Стили состояний элементов ***
 */
-.search-field__button:hover,
-.search-field__button:focus {
-	background-color: $sp-shop--blue;
-}
-
-.search-field__button:active {
-	opacity: 0.7;
-}
-
-.search-field__button:hover > .search-field__button-icon,
-.search-field__button:focus > .search-field__button-icon {
-	fill: $white;
-}
-
 .search-field__button:hover ~ .search-field__input-box,
 .search-field__button:focus ~ .search-field__input-box,
 .search-field__input-box:hover {

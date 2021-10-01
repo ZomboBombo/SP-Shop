@@ -19,7 +19,8 @@
 	@include transition-settings($properties-for-transition, 0.1s);
 
 	&::placeholder {
-		color: #8e90a6;
+		color: $form-input-bg-color;
+		text-overflow: ellipsis;
 	}
 }
 

@@ -111,7 +111,7 @@
 
 		display: block;
 
-		width: calc(100% + $product-card-remove-button--diagonal-coefficient);
+		width: calc(100% + $PRODUCT_CARD_REMOVE_BUTTON_DIAGONAL_COEFFICIENT);
 		height: 1px;
 
 		background-color: $border-color;
