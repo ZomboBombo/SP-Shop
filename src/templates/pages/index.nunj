@@ -67,17 +67,17 @@
             <div class="credit-card-form__card-box">
               <label class="credit-card-form__label">
                 Name on card
-                <input type="text" class="credit-card-form__input" placeholder="Please, enter the name of the cardholder..." required>
+                <input type="text" class="form-input credit-card-form__input" placeholder="Please, enter the name of the cardholder..." required>
               </label>
 
               <fieldset class="credit-card-form__fieldset">
                 <legend class="credit-card-form__label">Card number</legend>
 
                 <div class="credit-card-form__fieldset-wrapper">
-                  <input type="text" pattern="[0-9]{4}" inputmode="numeric" class="credit-card-form__input" placeholder="XXXX" required>
-                  <input type="text" pattern="[0-9]{4}" inputmode="numeric" class="credit-card-form__input" placeholder="XXXX" required>
-                  <input type="text" pattern="[0-9]{4}" inputmode="numeric" class="credit-card-form__input" placeholder="XXXX" required>
-                  <input type="text" pattern="[0-9]{4}" inputmode="numeric" class="credit-card-form__input" placeholder="XXXX" required>
+                  <input type="text" pattern="[0-9]{4}" inputmode="numeric" class="form-input credit-card-form__input" placeholder="XXXX" required>
+                  <input type="text" pattern="[0-9]{4}" inputmode="numeric" class="form-input credit-card-form__input" placeholder="XXXX" required>
+                  <input type="text" pattern="[0-9]{4}" inputmode="numeric" class="form-input credit-card-form__input" placeholder="XXXX" required>
+                  <input type="text" pattern="[0-9]{4}" inputmode="numeric" class="form-input credit-card-form__input" placeholder="XXXX" required>
                 </div>
               </fieldset>
 
@@ -86,7 +86,7 @@
 
                 <label class="credit-card-form__label">
                   <span>Expire date</span>
-                  <input type="text" inputmode="numeric" class="credit-card-form__input" placeholder="Enter the expire date of the card..." required>
+                  <input type="text" inputmode="numeric" class="form-input credit-card-form__input" placeholder="Enter the expire date of the card..." required>
                 </label>
 
                 <div class="credit-card-form__label">
@@ -101,7 +101,7 @@
                     </div>
                   </label>
 
-                  <input type="text" pattern="[0-9]{3}" inputmode="numeric" class="credit-card-form__input" id="customer-cvv" placeholder="Enter 3 secret digits..." required>
+                  <input type="text" pattern="[0-9]{3}" inputmode="numeric" class="form-input credit-card-form__input" id="customer-cvv" placeholder="Enter 3 secret digits..." required>
                 </div>
               </fieldset>
             </div>
