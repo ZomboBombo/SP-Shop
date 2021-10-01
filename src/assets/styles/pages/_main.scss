@@ -1,4 +1,6 @@
 .site-main-content {
+	position: relative;
+
 	display: flex;
 	margin-bottom: 120px;
 }
@@ -15,5 +17,29 @@
 
 .site-main-content__sidebar {
 	width: 100%;
-	max-width: 410px;
+	max-width: $sidebar-max-width;
+
+	background-color: $white;
+
+	$properties-for-transition: right;
+
+	@include transition-settings($properties-for-transition, 0.25s);
+}
+
+/*
+==================================
+--------- МЕДИАВЫРАЖЕНИЯ ---------
+==================================
+*/
+// *** ширина вьюпорта: "Планшет" ***
+@media (max-width: $width--desktop) {
+	.site-main-content__sidebar {
+		position: absolute;
+		right: -($sidebar-max-width);
+		z-index: 2;
+
+		&--open {
+			right: 0;
+		}
+	}
 }

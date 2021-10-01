@@ -14,15 +14,11 @@
 .site-header__controls {
 	display: flex;
 	flex-wrap: wrap;
+	align-items: center;
 }
 
-.site-header__search {
+.site-header__button {
 	margin-right: 12px;
-}
-
-.site-header__basket {
-	width: 42px;
-	height: 42px;
 
 	background-color: transparent;
 	border: none;
@@ -33,27 +29,92 @@
 	$properties-for-transition: background-color, opacity;
 
 	@include transition-settings($properties-for-transition);
+
+	&:last-of-type {
+		margin-right: 0;
+	}
 }
 
-.site-header__basket-icon {
+.site-header__button-icon {
 	$properties-for-transition: fill;
 
 	@include transition-settings($properties-for-transition);
 }
 
+.site-header__search {
+	margin-right: 12px;
+}
+
+.site-header__basket {
+	width: 42px;
+	height: 42px;
+}
+
+.site-header__burger {
+	position: relative;
+	z-index: 3;
+
+	display: none;
+
+	font-size: 0;
+
+	width: 42px;
+	height: 42px;
+
+	&::before {
+		content: '';
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		display: block;
+
+		width: 29px;
+		height: 2px;
+
+		background-color: $black;
+
+		box-shadow: 0 8px 0 0 $black, 0 -8px 0 0 $black;
+
+		$properties-for-transition: background-color, box-shadow;
+
+		@include transition-settings($properties-for-transition);
+	}
+}
+
 /*
 *** Стили состояний элементов ***
 */
-.site-header__basket:hover,
-.site-header__basket:focus {
+.site-header__button:hover,
+.site-header__button:focus {
 	background-color: $sp-shop--blue;
 }
 
-.site-header__basket:active {
+.site-header__button:active {
 	opacity: 0.7;
 }
 
-.site-header__basket:hover > .site-header__basket-icon,
-.site-header__basket:focus > .site-header__basket-icon {
+.site-header__button:hover > .site-header__button-icon,
+.site-header__button:focus > .site-header__button-icon {
 	fill: $white;
+}
+
+.site-header__burger:hover::before,
+.site-header__burger:focus::before {
+	background-color: $white;
+	box-shadow: 0 5px 0 0 $white, 0 -5px 0 0 $white;
+}
+
+/*
+==================================
+--------- МЕДИАВЫРАЖЕНИЯ ---------
+==================================
+*/
+// *** ширина вьюпорта: "Планшет" ***
+@media (max-width: $width--desktop) {
+	.site-header__burger {
+		display: block;
+	}
 }
