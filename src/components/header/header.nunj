@@ -10,10 +10,10 @@
 
     <div class="site-header__controls">
       <div class="site-header__search search-field">
-        <button type="button" class="search-field__button" title="Site search: click to Start..." aria-label="Site search: click to Start...">
+        <button type="button" class="site-header__button search-field__button" title="Site search: click to Start..." aria-label="Site search: click to Start...">
           {{ icon({
               iconName: 'search',
-              className: 'search-field__button-icon',
+              className: 'site-header__button-icon search-field__button-icon',
               width: 24,
               height: 24
             })
@@ -25,15 +25,17 @@
         </div>
       </div>
 
-      <button type="button" class="site-header__basket" title="Items in your cart: 0" aria-label="Items in your cart: 0">
+      <button type="button" class="site-header__button site-header__basket" title="Items in your cart: 0" aria-label="Items in your cart: 0">
         {{ icon({
             iconName: 'cart',
-            className: 'site-header__basket-icon',
+            className: 'site-header__button-icon site-header__basket-icon',
             width: 24,
             height: 21
           })
         }}
       </button>
+
+      <button type="button" class="site-header__button site-header__burger" title="Open navigation menu" aria-label="Open navigation menu">Open menu</button>
     </div>
   </div>
 </header>
