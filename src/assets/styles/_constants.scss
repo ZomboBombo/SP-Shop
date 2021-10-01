@@ -2,7 +2,7 @@
 
 // *** для различных Ширин вьюпорта ***
 $width--tablet: 768px;
-$width--desktop: 1023px;
+$width--desktop: 1199px;
 $width--max: 1640px;
 
 // *** для Шрифтов ***
@@ -15,15 +15,25 @@ $black: #000000;
 $border-color: #cfcfcf;
 $placeholder-bg-color: #ededf1;
 $more-info-bg-color: #dbdbdb;
+$form-input-bg-color: #8e90a6;
 
 $payment-step--disabled: #d5d5d5;
 
 $sp-shop--blue: #3366ff;
 
-// *** Утилитарные переменные ***
-$payment-steps-border-padding: 42px;
-
+/*
+==========================================
+--------- Утилитарные переменные ---------
+==========================================
+*/
+// --- Коэффициенты для различных математических вычислений ---
 $BILLING_INFORMATION_AVERAGE_COEFFICIENT: 0.5;
+$PRODUCT_CARD_REMOVE_BUTTON_DIAGONAL_COEFFICIENT: 44%;
+
+// --- Различные константы ---
+$navigation-menu-max-width: 410px;
+
+$payment-steps-border-padding: 42px;
 
 $billing-information-custom-radio-sizes--big-circle: 18px;
 $billing-information-custom-radio-sizes--small-circle: 8px;
@@ -33,4 +43,4 @@ $billing-information-custom-checkbox-sizes--small-square: 8px;
 $more-info-margin-top: 15px;
 $more-info-margin-left: 5px;
 
-$product-card-remove-button--diagonal-coefficient: 44%;
+$sidebar-max-width: 410px;
