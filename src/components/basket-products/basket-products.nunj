@@ -46,7 +46,7 @@
                 </button>
               </div>
 
-              <span class="product-card__total-cost" title="Total cost of this product" aria-label="Total cost of this product">{{ item.basketProductCost }}</span>
+              <span class="product-card__total-cost" data-product-cost="{{ item.basketProductCost }}" title="Total cost of this product" aria-label="Total cost of this product">{{ item.basketProductCost }}</span>
             </div>
           </div>
           

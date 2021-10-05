@@ -25,7 +25,7 @@
         </div>
       </div>
 
-      <button type="button" class="site-header__button site-header__basket" title="Items in your cart: 0" aria-label="Items in your cart: 0">
+      <button type="button" class="site-header__button site-header__basket" id="basket-button" title="Items in your cart: 0" aria-label="Items in your cart: 0">
         {{ icon({
             iconName: 'cart',
             className: 'site-header__button-icon site-header__basket-icon',

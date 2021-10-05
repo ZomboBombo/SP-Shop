@@ -129,7 +129,7 @@
       </div>
     </div>
 
-    <div class="site-main-content__sidebar">
+    <div class="site-main-content__sidebar" id="sidebar-box">
       {% include "../../components/sidebar/sidebar.nunj" %}
     </div>
   </main>

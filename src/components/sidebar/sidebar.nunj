@@ -3,7 +3,7 @@
 <section class="sidebar">
   <h2 class="visually-hidden">Sidebar</h3>
 
-  <section class="sidebar__section basket-content">
+  <section class="sidebar__section basket-content" id="basket-content">
     <h3 class="section-title basket-content__title">Basket content</h3>
 
     {{ basketProducts() }}
@@ -18,29 +18,29 @@
     </form>
   </section>
 
-  <section class="sidebar__section total-purchase-cost">
+  <section class="sidebar__section total-purchase-cost" id="total-purchase-cost">
     <h3 class="visually-hidden">Total purchase cost</h3>
 
     <table class="total-purchase-cost__table payment-table">
       <tbody class="payment-table__body">
-        <tr class="payment-table__row">
+        <tr class="payment-table__row" id="purchase-cost--subtotal">
           <th class="payment-table__row-heading">Subtotal</th>
           <td class="payment-table__row-data">$ 1050</td>
         </tr>
 
-        <tr class="payment-table__row">
+        <tr class="payment-table__row" id="purchase-cost--tax">
           <th class="payment-table__row-heading">Tax</th>
           <td class="payment-table__row-data">$ 100</td>
         </tr>
 
-        <tr class="payment-table__row">
+        <tr class="payment-table__row" id="purchase-cost--shipping">
           <th class="payment-table__row-heading">Shipping</th>
           <td class="payment-table__row-data">$ 150</td>
         </tr>
       </tbody>
 
       <tfoot class="payment-table__footer">
-        <tr class="payment-table__row">
+        <tr class="payment-table__row" id="purchase-cost--total">
           <th class="payment-table__row-heading payment-table__row-heading--bold">Total</th>
           <td class="payment-table__row-data payment-table__row-data--bold">$ 1300</td>
         </tr>
