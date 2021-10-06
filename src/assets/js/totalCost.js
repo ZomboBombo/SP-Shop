@@ -1,63 +1,40 @@
 import Util from 'utils/utility-constants';
+import getNewObserver from './observerOfElementChanges';
+
+// ---------- КОНСТАНТЫ -----------
+const ZERO_DOLLARS = Util.DOLLAR_SIGN + Util.ZERO_VALUE;
 
 // --------- DOM-элементы ---------
 const basketContent = document.querySelector('#basket-content');
 const basketContentItemsList = basketContent.querySelector('.basket-content__products');
-const basketContentItems = basketContentItemsList.querySelectorAll(
-	'.basket-content__products-item'
-);
 const basketContentItemsCosts = basketContentItemsList.querySelectorAll(
 	'.product-card__total-cost'
 );
 
 const totalPurchaseCostSection = document.querySelector('#total-purchase-cost');
+
 const paymentTable = totalPurchaseCostSection.querySelector('.payment-table');
 const paymentTableRows = paymentTable.querySelectorAll('.payment-table__row');
+
 const paymentTableSubtotalRow = paymentTable.querySelector('#purchase-cost--subtotal');
 const paymentTableSubtotalValue = paymentTableSubtotalRow.querySelector('.payment-table__row-data');
+
+const paymentTableTaxRow = paymentTable.querySelector('#purchase-cost--tax');
+const paymentTableTaxValue = paymentTableTaxRow.querySelector('.payment-table__row-data');
+const initialTaxValue = paymentTableTaxValue.textContent;
+
+const paymentTableShippingRow = paymentTable.querySelector('#purchase-cost--shipping');
+const paymentTableShippingValue = paymentTableShippingRow.querySelector('.payment-table__row-data');
+const initialShippingValue = paymentTableShippingValue.textContent;
+
 const paymentTableTotalRow = paymentTable.querySelector('#purchase-cost--total');
-const paymentTableTotalRowValue = paymentTableTotalRow.querySelector('.payment-table__row-data');
+const paymentTableTotalValue = paymentTableTotalRow.querySelector('.payment-table__row-data');
 
 /*
 ===============================================
 --------------- ОСНОВНАЯ ЛОГИКА ---------------
 ===============================================
 */
-
-// *** Универсальная ф-ция для отслеживания изменений конкретного DOM-узла ***
-const observeElementChanges = (observerTarget, observerCallbackLogic) => {
-	// --- Объект-конфиг для Наблюдателя ---
-	const observerConfig = {
-		childList: Util.IS_TRUE,
-		characterData: Util.IS_TRUE,
-		subtree: Util.IS_TRUE,
-	};
-
-	// --- Коллбек с логикой для Наблюдателя ---
-	const observerCallback = mutationsList => {
-		mutationsList.forEach(mutation => {
-			if (mutation.type) {
-				observerCallbackLogic();
-			}
-		});
-	};
-
-	// --- Новый экземпляр класса Наблюдателя ---
-	const observer = new MutationObserver(observerCallback);
-
-	// --- Наблюдение за нужным элементом ---
-	observer.observe(observerTarget, observerConfig);
-
-	/*
-	 * *** ЕСЛИ количество потомков наблюдаемого элемента равно 0,
-	 * *** ОТКЛЮЧИТЬ/ПРЕКРАТИТЬ наблюление за элементом
-	 * ***
-	 * *** !!!!!! НУЖНО ПРИДУМАТЬ КОРРЕКТНЫЙ СПОСОБ ОТКЛЮЧЕНИЯ НАБЛЮДАТЕЛЯ !!!!!!
-	 */
-	// if (observerTarget.childElementCount === Util.ZERO_VALUE) {
-	// 	observer.disconnect();
-	// }
-};
 
 // *** Функция для получения массива табличных данных о стоимости ***
 const getArrayOfTableData = () => {
@@ -82,6 +59,18 @@ const calculateSubtotal = () => {
 	}
 
 	paymentTableSubtotalValue.textContent = Util.DOLLAR_SIGN + subtotalValue;
+
+	const integerSubtotalValue = Number(
+		paymentTableSubtotalValue.textContent.match(Util.NUMBER_REG_EXP)
+	);
+
+	if (integerSubtotalValue === Util.ZERO_VALUE) {
+		paymentTableTaxValue.textContent = ZERO_DOLLARS;
+		paymentTableShippingValue.textContent = ZERO_DOLLARS;
+	} else {
+		paymentTableTaxValue.textContent = initialTaxValue;
+		paymentTableShippingValue.textContent = initialShippingValue;
+	}
 };
 
 // *** Функция для перерасчёта Итоговой стоимости покупки ***
@@ -93,21 +82,23 @@ const calculateTotalCost = () => {
 		totalCost += Number(element.match(Util.NUMBER_REG_EXP));
 	});
 
-	paymentTableTotalRowValue.textContent = Util.DOLLAR_SIGN + totalCost;
+	paymentTableTotalValue.textContent = Util.DOLLAR_SIGN + totalCost;
 };
 
 // *** Ф-ция для отслеживания изменения состояний стоимости товаров в Корзине ***
-const onProductCostChange = itemInBasket => {
-	observeElementChanges(itemInBasket, calculateSubtotal);
+const observeProductCostChange = () => {
+	for (const basketItemCost of basketContentItemsCosts) {
+		const productCostChangeObserver = getNewObserver(basketItemCost, calculateSubtotal);
+	}
 };
 
 // *** Ф-ция для отслеживания изменения количества товаров в Корзине ***
-const onBasketContentChange = () => {
-	observeElementChanges(basketContentItemsList, calculateSubtotal);
+const observeBasketContentChange = () => {
+	const basketContentChangeObserver = getNewObserver(basketContentItemsList, calculateSubtotal);
 };
 
-const onSubtotalChange = () => {
-	observeElementChanges(paymentTableSubtotalValue, calculateTotalCost);
+const observeSubtotalChange = () => {
+	const subtotalChangeObserver = getNewObserver(paymentTableSubtotalValue, calculateTotalCost);
 };
 
 /*
@@ -119,12 +110,9 @@ const changeTotalCost = () => {
 	calculateSubtotal();
 	calculateTotalCost();
 
-	for (const basketItem of basketContentItems) {
-		onProductCostChange(basketItem);
-	}
-
-	onBasketContentChange();
-	onSubtotalChange();
+	observeProductCostChange();
+	observeBasketContentChange();
+	observeSubtotalChange();
 };
 
 export default changeTotalCost;
