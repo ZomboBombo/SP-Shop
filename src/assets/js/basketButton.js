@@ -1,4 +1,4 @@
-import UtilityConstants from 'utils/utility-constants';
+import Util from 'utils/utility-constants';
 
 // ----------- КОНСТАНТЫ ----------
 const SIDEBAR_OPEN_MOD = 'site-main-content__sidebar--open';
@@ -15,7 +15,7 @@ const sidebarBox = document.querySelector('#sidebar-box');
 const onBasketClick = evt => {
 	evt.preventDefault();
 
-	switch (UtilityConstants.IS_TRUE) {
+	switch (Util.IS_TRUE) {
 		case sidebarBox.classList.contains(SIDEBAR_OPEN_MOD):
 			sidebarBox.classList.remove(SIDEBAR_OPEN_MOD);
 			break;

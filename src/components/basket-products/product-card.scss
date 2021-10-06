@@ -76,7 +76,7 @@
 .product-card__remove-button-box {
 	position: absolute;
 	top: 0;
-	left: 100%;
+	left: calc(100% - $product-card-remove-button-left-space);
 
 	width: auto;
 	height: auto;
