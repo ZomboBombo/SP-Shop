@@ -59,3 +59,26 @@ footer {
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);
 }
+
+/*
+ * === Класс для состояния <body> в то время,
+ * ===  когда открыто какое-либо Модальное окно
+ */
+.modal-window-active {
+	overflow: hidden;
+
+	&::before {
+		content: '';
+
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 3;
+
+		display: block;
+
+		background-color: rgba($black, 0.5);
+	}
+}
