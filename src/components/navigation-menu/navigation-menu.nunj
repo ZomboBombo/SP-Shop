@@ -1,5 +1,5 @@
 {% macro navigationMenu() %}
-  <nav class="site-header__navigation navigation-menu">
+  <nav class="site-header__navigation navigation-menu" id="site-navigation-menu">
     <ul class="navigation-menu__list">
       {% for item in navigationMenuList %}
         <li class="navigation-menu__item">

@@ -1,6 +1,6 @@
 {% from "../navigation-menu/navigation-menu.nunj" import navigationMenu %}
 
-<header class="site-header">
+<header class="site-header" id="site-header">
   <div class="container site-header__wrapper">
     <a class="logo site-header__logo">
       <img src="{% inline 'logo.svg' %}" width="89" height="32" alt="«SP.shop» logo">
@@ -35,7 +35,7 @@
         }}
       </button>
 
-      <button type="button" class="site-header__button site-header__burger" title="Open navigation menu" aria-label="Open navigation menu">Open menu</button>
+      <button type="button" class="site-header__button site-header__burger" id="navigation-menu-open-button" title="Open/close navigation menu" aria-label="Open/close navigation menu">Open menu</button>
     </div>
   </div>
 </header>

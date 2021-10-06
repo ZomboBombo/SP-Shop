@@ -7,6 +7,12 @@
     <h3 class="section-title basket-content__title">Basket content</h3>
 
     {{ basketProducts() }}
+
+    <p class="basket-content__empty-basket-notification empty-basket-notification" id="empty-basket-notification">
+      <span class="empty-basket-notification__sentence">O-o-ops!</span>
+      <span class="empty-basket-notification__sentence">It looks like your basket is&nbsp;empty!&nbsp;:(</span>
+      <span class="empty-basket-notification__sentence">Rather fill it with goods!</span>
+    </p>
   </section>
 
   <section class="sidebar__section promo-code-section">

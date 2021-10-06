@@ -1,7 +1,7 @@
 {% from "../icon/icon.nunj" import icon %}
 
 {% macro basketProducts() %}
-  <ul class="basket-content__products">
+  <ul class="basket-content__products" id="basket-content-products-list">
     {% for item in basketProductsItems %}
       <li class="basket-content__products-item">
         <article class="product-card">
