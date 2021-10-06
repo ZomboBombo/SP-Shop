@@ -52,7 +52,7 @@
 
 .site-header__burger {
 	position: relative;
-	z-index: 3;
+	z-index: 5;
 
 	display: none;
 
@@ -61,7 +61,8 @@
 	width: 42px;
 	height: 42px;
 
-	&::before {
+	&::before,
+	&::after {
 		content: '';
 
 		position: absolute;
@@ -76,11 +77,24 @@
 
 		background-color: $black;
 
-		box-shadow: 0 8px 0 0 $black, 0 -8px 0 0 $black;
-
-		$properties-for-transition: background-color, box-shadow;
+		$properties-for-transition: transform, background-color, box-shadow;
 
 		@include transition-settings($properties-for-transition);
+	}
+
+	&::before {
+		box-shadow: 0 8px 0 0 $black, 0 -8px 0 0 $black;
+	}
+}
+
+.site-header__burger--transform-to-close-button {
+	&::before {
+		transform: translate(-50%, -50%) rotate(45deg);
+		box-shadow: none;
+	}
+
+	&::after {
+		transform: translate(-50%, -50%) rotate(-45deg);
 	}
 }
 
@@ -105,6 +119,16 @@
 .site-header__burger:focus::before {
 	background-color: $white;
 	box-shadow: 0 5px 0 0 $white, 0 -5px 0 0 $white;
+}
+
+.site-header__burger--transform-to-close-button:hover::before,
+.site-header__burger--transform-to-close-button:focus::before {
+	box-shadow: none;
+}
+
+.site-header__burger:hover::after,
+.site-header__burger:focus::after {
+	background-color: $white;
 }
 
 /*
