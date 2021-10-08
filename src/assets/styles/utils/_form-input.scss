@@ -18,6 +18,10 @@
 
 	@include transition-settings($properties-for-transition, 0.1s);
 
+	&::-webkit-input-placeholder,
+	&::-moz-placeholder,
+	&:-moz-placeholder,
+	&:-ms-input-placeholder,
 	&::placeholder {
 		color: $form-input-bg-color;
 		text-overflow: ellipsis;
