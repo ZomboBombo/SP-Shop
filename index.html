@@ -1,475 +1,380 @@
-
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<!-- Front-end by sborkaproject.com -->
-		<meta charset="utf-8" />
+
+<head>
+    <!-- Front-end by sborkaproject.com -->
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="description" content="«SP.Shop — unique merchandise store of the company «Sborka Project».">
 
-		<title>SP.shop</title>
+    <title>SP.shop</title>
 
-			<script type="text/javascript">
-		;(function(){
-			var modificators = [],
-				nv = navigator,
-				pl = nv.platform.toLowerCase(),
-				ua = nv.userAgent.toLowerCase(),
-				an = nv.appName.toLowerCase(),
-				htmlElement = document.documentElement,
-				ls = localStorage;
+    <script type="text/javascript">!function(){function e(e){return r.indexOf(e)>-1}function o(e){return a.indexOf(e)>-1}function n(e){return s.indexOf(e)>-1}var i=[],t=navigator,r=t.platform.toLowerCase(),a=t.userAgent.toLowerCase(),s=t.appName.toLowerCase(),d=document.documentElement,c=(localStorage,o("iphone")||o("ipod")||o("ipad")||o("android")||o("iemobile")||o("blackberry")||o("bada")?"_mobile":"_desktop");i.push(c);var m="";o("ipad")||o("iphone")||o("ipod")?m="_ios":o("android")?m="_android":e("win")?m="_win":e("mac")?m="_mac":e("linux")&&(m="_linux"),i.push(m);var u="";o("firefox")?u="_ff":o("opr")?u="_opera":o("yabrowser")?u="_yandex":o("edge")?u="_edge":o("trident")||n("explorer")||n("msie")?u="_ie":o("safari")&&!o("chrome")?u="_safari":o("chrome")&&(u="_chrome"),i.push(u),window.environmentObject={platform:c,os:m,browser:u,isLocal:0==window.location.href.indexOf("http://localhost:")},d.className+=" "+i.join(" ");var l=new XMLHttpRequest;l.open("GET","assets/svg/sprite.svg",!0),l.overrideMimeType("image/svg+xml"),l.onreadystatechange=function(){function e(){if(document.body){var o=document.querySelector(".invisible-container");o||(o=document.createElement("div"),o.className="invisible-container",document.body.insertBefore(o,document.body.firstChild)),o.appendChild(l.responseXML.documentElement)}else setTimeout(e,16)}l.readyState===XMLHttpRequest.DONE&&200===l.status&&e()},l.send("")}();</script>
 
-			function pli(s){return pl.indexOf(s) > -1;}
-			function uai(s){return ua.indexOf(s) > -1;}
-			function ani(s){return an.indexOf(s) > -1;}
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css?17cf8d2d1d4a0e6aaad1aa3c7606c9d4" />
 
-			// Platform
-			var platformClass = uai('iphone') || uai('ipod') || uai('ipad') || uai('android') || uai('iemobile') || uai('blackberry') || uai('bada') ? '_mobile' : '_desktop';
-			modificators.push(platformClass);
+    <link rel="preload" href="assets/fonts/Roboto-Regular.woff2" as="font" crossorigin>
+</head>
 
-			// OS
-			var osClass = '';
-			if (uai('ipad') || uai('iphone') || uai('ipod')) {
-				osClass = '_ios';
-			} else if (uai('android')) {
-				osClass = '_android';
-			} else if (pli('win')) {
-				osClass = '_win';
-			} else if (pli('mac')) {
-				osClass = '_mac';
-			} else if (pli('linux')) {
-				osClass = '_linux';
-			}
-			modificators.push(osClass);
+<body>
 
-			// Browser
-			var browserClass = '';
-			if (uai('firefox')) {
-				browserClass = '_ff';
-			} else if (uai('opr')) {
-				browserClass = '_opera';
-			} else if (uai('yabrowser')) {
-				browserClass = '_yandex';
-			} else if (uai('edge')) {
-				browserClass = '_edge';
-			} else if (uai('trident') || ani('explorer') || ani('msie')) {
-				browserClass = '_ie';
-			} else if (uai('safari') && !uai('chrome')) {
-				browserClass = '_safari';
-			} else if (uai('chrome')) {
-				browserClass = '_chrome';
-			}
-			modificators.push(browserClass);
+    <header class="site-header" id="site-header">
+        <div class="container site-header__wrapper">
+            <a class="logo site-header__logo">
+                <img src="data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2289%22%20height%3D%2232%22%20viewBox%3D%220%200%2089%2032%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0D%0A%3Cpath%20d%3D%22M45.2656%2027.1475C45.2656%2026.8662%2045.3477%2026.6318%2045.5117%2026.4443C45.6816%2026.2568%2045.9336%2026.1631%2046.2676%2026.1631C46.6016%2026.1631%2046.8535%2026.2568%2047.0234%2026.4443C47.1992%2026.6318%2047.2871%2026.8662%2047.2871%2027.1475C47.2871%2027.417%2047.1992%2027.6426%2047.0234%2027.8242C46.8535%2028.0059%2046.6016%2028.0967%2046.2676%2028.0967C45.9336%2028.0967%2045.6816%2028.0059%2045.5117%2027.8242C45.3477%2027.6426%2045.2656%2027.417%2045.2656%2027.1475ZM55.5137%2025.4775C55.5137%2025.0381%2055.3467%2024.6982%2055.0127%2024.458C54.6846%2024.2119%2054.1074%2024.001%2053.2812%2023.8252C52.4609%2023.6494%2051.8076%2023.4385%2051.3213%2023.1924C50.8408%2022.9463%2050.4834%2022.6533%2050.249%2022.3135C50.0205%2021.9736%2049.9062%2021.5693%2049.9062%2021.1006C49.9062%2020.3213%2050.2344%2019.6621%2050.8906%2019.123C51.5527%2018.584%2052.3965%2018.3145%2053.4219%2018.3145C54.5%2018.3145%2055.373%2018.5928%2056.041%2019.1494C56.7148%2019.7061%2057.0518%2020.418%2057.0518%2021.2852H55.417C55.417%2020.8398%2055.2266%2020.4561%2054.8457%2020.1338C54.4707%2019.8115%2053.9961%2019.6504%2053.4219%2019.6504C52.8301%2019.6504%2052.3672%2019.7793%2052.0332%2020.0371C51.6992%2020.2949%2051.5322%2020.6318%2051.5322%2021.0479C51.5322%2021.4404%2051.6875%2021.7363%2051.998%2021.9355C52.3086%2022.1348%2052.8682%2022.3252%2053.6768%2022.5068C54.4912%2022.6885%2055.1504%2022.9053%2055.6543%2023.1572C56.1582%2023.4092%2056.5303%2023.7139%2056.7705%2024.0713C57.0166%2024.4229%2057.1396%2024.8535%2057.1396%2025.3633C57.1396%2026.2129%2056.7998%2026.8955%2056.1201%2027.4111C55.4404%2027.9209%2054.5586%2028.1758%2053.4746%2028.1758C52.7129%2028.1758%2052.0391%2028.041%2051.4531%2027.7715C50.8672%2027.502%2050.4072%2027.127%2050.0732%2026.6465C49.7451%2026.1602%2049.5811%2025.6357%2049.5811%2025.0732H51.207C51.2363%2025.6182%2051.4531%2026.0518%2051.8574%2026.374C52.2676%2026.6904%2052.8066%2026.8486%2053.4746%2026.8486C54.0898%2026.8486%2054.582%2026.7256%2054.9512%2026.4795C55.3262%2026.2275%2055.5137%2025.8936%2055.5137%2025.4775ZM60.8838%2019.6416C61.6045%2018.7568%2062.542%2018.3145%2063.6963%2018.3145C65.7061%2018.3145%2066.7197%2019.4482%2066.7373%2021.7158V28H65.1113V21.707C65.1055%2021.0215%2064.9473%2020.5146%2064.6367%2020.1865C64.332%2019.8584%2063.8545%2019.6943%2063.2041%2019.6943C62.6768%2019.6943%2062.2139%2019.835%2061.8154%2020.1162C61.417%2020.3975%2061.1064%2020.7666%2060.8838%2021.2236V28H59.2578V14.5H60.8838V19.6416ZM68.7412%2023.1572C68.7412%2022.2256%2068.9229%2021.3877%2069.2861%2020.6436C69.6553%2019.8994%2070.165%2019.3252%2070.8154%2018.9209C71.4717%2018.5166%2072.2188%2018.3145%2073.0566%2018.3145C74.3516%2018.3145%2075.3975%2018.7627%2076.1943%2019.6592C76.9971%2020.5557%2077.3984%2021.748%2077.3984%2023.2363V23.3506C77.3984%2024.2764%2077.2197%2025.1084%2076.8623%2025.8467C76.5107%2026.5791%2076.0039%2027.1504%2075.3418%2027.5605C74.6855%2027.9707%2073.9297%2028.1758%2073.0742%2028.1758C71.7852%2028.1758%2070.7393%2027.7275%2069.9365%2026.8311C69.1396%2025.9346%2068.7412%2024.748%2068.7412%2023.2715V23.1572ZM70.376%2023.3506C70.376%2024.4053%2070.6191%2025.252%2071.1055%2025.8906C71.5977%2026.5293%2072.2539%2026.8486%2073.0742%2026.8486C73.9004%2026.8486%2074.5566%2026.5264%2075.043%2025.8818C75.5293%2025.2314%2075.7725%2024.3232%2075.7725%2023.1572C75.7725%2022.1143%2075.5234%2021.2705%2075.0254%2020.626C74.5332%2019.9756%2073.877%2019.6504%2073.0566%2019.6504C72.2539%2019.6504%2071.6064%2019.9697%2071.1143%2020.6084C70.6221%2021.2471%2070.376%2022.1611%2070.376%2023.3506ZM87.4707%2023.3506C87.4707%2024.7979%2087.1396%2025.9639%2086.4775%2026.8486C85.8154%2027.7334%2084.9189%2028.1758%2083.7881%2028.1758C82.6338%2028.1758%2081.7256%2027.8096%2081.0635%2027.0771V31.6562H79.4375V18.4902H80.9229L81.002%2019.5449C81.6641%2018.7246%2082.584%2018.3145%2083.7617%2018.3145C84.9043%2018.3145%2085.8066%2018.7451%2086.4688%2019.6064C87.1367%2020.4678%2087.4707%2021.666%2087.4707%2023.2012V23.3506ZM85.8447%2023.166C85.8447%2022.0938%2085.6162%2021.2471%2085.1592%2020.626C84.7021%2020.0049%2084.0752%2019.6943%2083.2783%2019.6943C82.2939%2019.6943%2081.5557%2020.1309%2081.0635%2021.0039V25.5479C81.5498%2026.415%2082.2939%2026.8486%2083.2959%2026.8486C84.0752%2026.8486%2084.6934%2026.541%2085.1504%2025.9258C85.6133%2025.3047%2085.8447%2024.3848%2085.8447%2023.166Z%22%20fill%3D%22black%22%2F%3E%0D%0A%3Cg%20clip-path%3D%22url(%23clip0)%22%3E%0D%0A%3Cpath%20d%3D%22M34.1072%200.790192H23.4924V28.1744H30.1023V19.5611H34.1072C40.3175%2019.5611%2043.9228%2015.6128%2043.9228%2010.1757C43.9228%204.73852%2040.3175%200.790192%2034.1072%200.790192ZM33.4212%2013.7522H30.1023V6.59909H33.4212C35.825%206.59909%2037.198%207.9155%2037.198%2010.1757C37.198%2012.4367%2035.825%2013.7522%2033.4212%2013.7522Z%22%20fill%3D%22black%22%2F%3E%0D%0A%3Cpath%20d%3D%22M12.2177%2011.6923C10.1865%2011.1194%208.89882%2010.6911%208.26845%2010.2906C7.75482%209.9476%207.43964%209.46001%207.43964%208.88801C7.43964%207.60033%208.4696%206.62784%2010.7872%206.62784C12.9899%206.62784%2014.1636%207.5716%2014.1636%208.97331H20.8013C20.8013%203.85135%2016.5099%200.446289%2011.1015%200.446289C7.8976%200.446289%205.43629%201.13413%203.49041%202.79266C1.77351%204.25274%200.743556%206.34139%200.743556%208.94547C0.743556%2011.2065%201.43049%2012.8372%202.48919%2013.9812C3.49041%2015.0678%205.5216%2016.3563%208.69768%2017.2148C10.9884%2017.8443%2012.6191%2018.3309%2013.3626%2018.8167C14.1348%2019.3034%2014.336%2019.7327%2014.336%2020.3047C14.336%2021.5349%2013.1058%2022.3646%2010.6436%2022.3646C8.35376%2022.3646%207.12445%2021.5061%207.03915%2020.0182H0.314331C0.314331%2025.1976%204.54911%2028.5156%2010.6436%2028.5156C16.5674%2028.5156%2021.0303%2024.8528%2021.0303%2020.1888C21.0303%2018.4719%2020.716%2016.9849%2019.4849%2015.4683C18.3983%2014.0962%2016.2244%2012.866%2012.2177%2011.6923Z%22%20fill%3D%22black%22%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cdefs%3E%0D%0A%3CclipPath%20id%3D%22clip0%22%3E%0D%0A%3Crect%20width%3D%2244%22%20height%3D%2228.7347%22%20fill%3D%22white%22%2F%3E%0D%0A%3C%2FclipPath%3E%0D%0A%3C%2Fdefs%3E%0D%0A%3C%2Fsvg%3E" width="89" height="32" alt="«SP.shop» logo">
+            </a>
 
-			window.environmentObject = {
-				platform: platformClass,
-				os: osClass,
-				browser: browserClass,
-				isLocal: window.location.href.indexOf('http://localhost:') == 0
-			};
-			htmlElement.className += ' ' + modificators.join(' ');
+            <nav class="site-header__navigation navigation-menu" id="site-navigation-menu">
+                <ul class="navigation-menu__list">
+                    <li class="navigation-menu__item">
+                        <a href="#" class="navigation-menu__link">Women's</a>
+                    </li>
+                    <li class="navigation-menu__item">
+                        <a href="#" class="navigation-menu__link">Men's</a>
+                    </li>
+                    <li class="navigation-menu__item">
+                        <a href="#" class="navigation-menu__link">Home</a>
+                    </li>
+                    <li class="navigation-menu__item">
+                        <a href="#" class="navigation-menu__link">Travel</a>
+                    </li>
+                    <li class="navigation-menu__item">
+                        <a href="#" class="navigation-menu__link">Beauty</a>
+                    </li>
+                    <li class="navigation-menu__item">
+                        <a href="#" class="navigation-menu__link">Sale</a>
+                    </li>
+                </ul>
+            </nav>
 
-			// SVG sprites
-			var xhr = new XMLHttpRequest();
-			xhr.open('GET', 'assets/svg/sprite.svg', true);
-			xhr.overrideMimeType('image/svg+xml');
-			
-			xhr.onreadystatechange = function(){
-				if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-					function waitForBody(){
-						if(document.body){
-							var containerClass = 'invisible-container';
-							var container = document.querySelector('.'+containerClass);
-							if(!container){
-								container = document.createElement('div');
-								container.className = containerClass;
-								document.body.insertBefore(container, document.body.firstChild);
-							}
-							container.appendChild(xhr.responseXML.documentElement);
-						} else {
-							setTimeout(waitForBody, 16);
-						}
-					}
+            <div class="site-header__controls">
+                <div class="site-header__search search-field">
+                    <button type="button" class="site-header__button search-field__button" title="Site search: click to Start..." aria-label="Site search: click to Start...">
+                        <svg class="site-header__button-icon search-field__button-icon" width="24" height="24">
+                            <use xlink:href="#icon-search" />
+                        </svg>
 
-					waitForBody();	
-				};
-			}
+                    </button>
 
-			xhr.send('');
-		})();
-	</script>
-
-
-			<link rel="stylesheet" type="text/css" href="assets/css/styles.css?hash" />
-    
-
-    
-      <link rel="preload" href="assets/fonts/Roboto-Regular.woff2" as="font" crossorigin>
-	</head>
-	<body>
-
-
-<header class="site-header" id="site-header">
-  <div class="container site-header__wrapper">
-    <a class="logo site-header__logo">
-      <img src="data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2289%22%20height%3D%2232%22%20viewBox%3D%220%200%2089%2032%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0D%0A%3Cpath%20d%3D%22M45.2656%2027.1475C45.2656%2026.8662%2045.3477%2026.6318%2045.5117%2026.4443C45.6816%2026.2568%2045.9336%2026.1631%2046.2676%2026.1631C46.6016%2026.1631%2046.8535%2026.2568%2047.0234%2026.4443C47.1992%2026.6318%2047.2871%2026.8662%2047.2871%2027.1475C47.2871%2027.417%2047.1992%2027.6426%2047.0234%2027.8242C46.8535%2028.0059%2046.6016%2028.0967%2046.2676%2028.0967C45.9336%2028.0967%2045.6816%2028.0059%2045.5117%2027.8242C45.3477%2027.6426%2045.2656%2027.417%2045.2656%2027.1475ZM55.5137%2025.4775C55.5137%2025.0381%2055.3467%2024.6982%2055.0127%2024.458C54.6846%2024.2119%2054.1074%2024.001%2053.2812%2023.8252C52.4609%2023.6494%2051.8076%2023.4385%2051.3213%2023.1924C50.8408%2022.9463%2050.4834%2022.6533%2050.249%2022.3135C50.0205%2021.9736%2049.9062%2021.5693%2049.9062%2021.1006C49.9062%2020.3213%2050.2344%2019.6621%2050.8906%2019.123C51.5527%2018.584%2052.3965%2018.3145%2053.4219%2018.3145C54.5%2018.3145%2055.373%2018.5928%2056.041%2019.1494C56.7148%2019.7061%2057.0518%2020.418%2057.0518%2021.2852H55.417C55.417%2020.8398%2055.2266%2020.4561%2054.8457%2020.1338C54.4707%2019.8115%2053.9961%2019.6504%2053.4219%2019.6504C52.8301%2019.6504%2052.3672%2019.7793%2052.0332%2020.0371C51.6992%2020.2949%2051.5322%2020.6318%2051.5322%2021.0479C51.5322%2021.4404%2051.6875%2021.7363%2051.998%2021.9355C52.3086%2022.1348%2052.8682%2022.3252%2053.6768%2022.5068C54.4912%2022.6885%2055.1504%2022.9053%2055.6543%2023.1572C56.1582%2023.4092%2056.5303%2023.7139%2056.7705%2024.0713C57.0166%2024.4229%2057.1396%2024.8535%2057.1396%2025.3633C57.1396%2026.2129%2056.7998%2026.8955%2056.1201%2027.4111C55.4404%2027.9209%2054.5586%2028.1758%2053.4746%2028.1758C52.7129%2028.1758%2052.0391%2028.041%2051.4531%2027.7715C50.8672%2027.502%2050.4072%2027.127%2050.0732%2026.6465C49.7451%2026.1602%2049.5811%2025.6357%2049.5811%2025.0732H51.207C51.2363%2025.6182%2051.4531%2026.0518%2051.8574%2026.374C52.2676%2026.6904%2052.8066%2026.8486%2053.4746%2026.8486C54.0898%2026.8486%2054.582%2026.7256%2054.9512%2026.4795C55.3262%2026.2275%2055.5137%2025.8936%2055.5137%2025.4775ZM60.8838%2019.6416C61.6045%2018.7568%2062.542%2018.3145%2063.6963%2018.3145C65.7061%2018.3145%2066.7197%2019.4482%2066.7373%2021.7158V28H65.1113V21.707C65.1055%2021.0215%2064.9473%2020.5146%2064.6367%2020.1865C64.332%2019.8584%2063.8545%2019.6943%2063.2041%2019.6943C62.6768%2019.6943%2062.2139%2019.835%2061.8154%2020.1162C61.417%2020.3975%2061.1064%2020.7666%2060.8838%2021.2236V28H59.2578V14.5H60.8838V19.6416ZM68.7412%2023.1572C68.7412%2022.2256%2068.9229%2021.3877%2069.2861%2020.6436C69.6553%2019.8994%2070.165%2019.3252%2070.8154%2018.9209C71.4717%2018.5166%2072.2188%2018.3145%2073.0566%2018.3145C74.3516%2018.3145%2075.3975%2018.7627%2076.1943%2019.6592C76.9971%2020.5557%2077.3984%2021.748%2077.3984%2023.2363V23.3506C77.3984%2024.2764%2077.2197%2025.1084%2076.8623%2025.8467C76.5107%2026.5791%2076.0039%2027.1504%2075.3418%2027.5605C74.6855%2027.9707%2073.9297%2028.1758%2073.0742%2028.1758C71.7852%2028.1758%2070.7393%2027.7275%2069.9365%2026.8311C69.1396%2025.9346%2068.7412%2024.748%2068.7412%2023.2715V23.1572ZM70.376%2023.3506C70.376%2024.4053%2070.6191%2025.252%2071.1055%2025.8906C71.5977%2026.5293%2072.2539%2026.8486%2073.0742%2026.8486C73.9004%2026.8486%2074.5566%2026.5264%2075.043%2025.8818C75.5293%2025.2314%2075.7725%2024.3232%2075.7725%2023.1572C75.7725%2022.1143%2075.5234%2021.2705%2075.0254%2020.626C74.5332%2019.9756%2073.877%2019.6504%2073.0566%2019.6504C72.2539%2019.6504%2071.6064%2019.9697%2071.1143%2020.6084C70.6221%2021.2471%2070.376%2022.1611%2070.376%2023.3506ZM87.4707%2023.3506C87.4707%2024.7979%2087.1396%2025.9639%2086.4775%2026.8486C85.8154%2027.7334%2084.9189%2028.1758%2083.7881%2028.1758C82.6338%2028.1758%2081.7256%2027.8096%2081.0635%2027.0771V31.6562H79.4375V18.4902H80.9229L81.002%2019.5449C81.6641%2018.7246%2082.584%2018.3145%2083.7617%2018.3145C84.9043%2018.3145%2085.8066%2018.7451%2086.4688%2019.6064C87.1367%2020.4678%2087.4707%2021.666%2087.4707%2023.2012V23.3506ZM85.8447%2023.166C85.8447%2022.0938%2085.6162%2021.2471%2085.1592%2020.626C84.7021%2020.0049%2084.0752%2019.6943%2083.2783%2019.6943C82.2939%2019.6943%2081.5557%2020.1309%2081.0635%2021.0039V25.5479C81.5498%2026.415%2082.2939%2026.8486%2083.2959%2026.8486C84.0752%2026.8486%2084.6934%2026.541%2085.1504%2025.9258C85.6133%2025.3047%2085.8447%2024.3848%2085.8447%2023.166Z%22%20fill%3D%22black%22%2F%3E%0D%0A%3Cg%20clip-path%3D%22url(%23clip0)%22%3E%0D%0A%3Cpath%20d%3D%22M34.1072%200.790192H23.4924V28.1744H30.1023V19.5611H34.1072C40.3175%2019.5611%2043.9228%2015.6128%2043.9228%2010.1757C43.9228%204.73852%2040.3175%200.790192%2034.1072%200.790192ZM33.4212%2013.7522H30.1023V6.59909H33.4212C35.825%206.59909%2037.198%207.9155%2037.198%2010.1757C37.198%2012.4367%2035.825%2013.7522%2033.4212%2013.7522Z%22%20fill%3D%22black%22%2F%3E%0D%0A%3Cpath%20d%3D%22M12.2177%2011.6923C10.1865%2011.1194%208.89882%2010.6911%208.26845%2010.2906C7.75482%209.9476%207.43964%209.46001%207.43964%208.88801C7.43964%207.60033%208.4696%206.62784%2010.7872%206.62784C12.9899%206.62784%2014.1636%207.5716%2014.1636%208.97331H20.8013C20.8013%203.85135%2016.5099%200.446289%2011.1015%200.446289C7.8976%200.446289%205.43629%201.13413%203.49041%202.79266C1.77351%204.25274%200.743556%206.34139%200.743556%208.94547C0.743556%2011.2065%201.43049%2012.8372%202.48919%2013.9812C3.49041%2015.0678%205.5216%2016.3563%208.69768%2017.2148C10.9884%2017.8443%2012.6191%2018.3309%2013.3626%2018.8167C14.1348%2019.3034%2014.336%2019.7327%2014.336%2020.3047C14.336%2021.5349%2013.1058%2022.3646%2010.6436%2022.3646C8.35376%2022.3646%207.12445%2021.5061%207.03915%2020.0182H0.314331C0.314331%2025.1976%204.54911%2028.5156%2010.6436%2028.5156C16.5674%2028.5156%2021.0303%2024.8528%2021.0303%2020.1888C21.0303%2018.4719%2020.716%2016.9849%2019.4849%2015.4683C18.3983%2014.0962%2016.2244%2012.866%2012.2177%2011.6923Z%22%20fill%3D%22black%22%2F%3E%0D%0A%3C%2Fg%3E%0D%0A%3Cdefs%3E%0D%0A%3CclipPath%20id%3D%22clip0%22%3E%0D%0A%3Crect%20width%3D%2244%22%20height%3D%2228.7347%22%20fill%3D%22white%22%2F%3E%0D%0A%3C%2FclipPath%3E%0D%0A%3C%2Fdefs%3E%0D%0A%3C%2Fsvg%3E" width="89" height="32" alt="«SP.shop» logo">
-    </a>
-
-      <nav class="site-header__navigation navigation-menu" id="site-navigation-menu">
-    <ul class="navigation-menu__list">
-        <li class="navigation-menu__item">
-          <a href="#" class="navigation-menu__link">Women's</a>
-        </li>
-        <li class="navigation-menu__item">
-          <a href="#" class="navigation-menu__link">Men's</a>
-        </li>
-        <li class="navigation-menu__item">
-          <a href="#" class="navigation-menu__link">Home</a>
-        </li>
-        <li class="navigation-menu__item">
-          <a href="#" class="navigation-menu__link">Travel</a>
-        </li>
-        <li class="navigation-menu__item">
-          <a href="#" class="navigation-menu__link">Beauty</a>
-        </li>
-        <li class="navigation-menu__item">
-          <a href="#" class="navigation-menu__link">Sale</a>
-        </li>
-    </ul>
-  </nav>
-
-
-    <div class="site-header__controls">
-      <div class="site-header__search search-field">
-        <button type="button" class="site-header__button search-field__button" title="Site search: click to Start..." aria-label="Site search: click to Start...">
-          	<svg  class="site-header__button-icon search-field__button-icon" width="24" height="24" >
-		<use xlink:href="#icon-search" />
-	</svg>
-
-        </button>
-
-        <div class="search-field__input-box">
-          <input type="text" class="search-field__input" placeholder="Enter merch name...">
-        </div>
-      </div>
-
-      <button type="button" class="site-header__button site-header__basket" id="basket-button" title="Items in your cart: 0" aria-label="Items in your cart: 0">
-        	<svg  class="site-header__button-icon site-header__basket-icon" width="24" height="21" >
-		<use xlink:href="#icon-cart" />
-	</svg>
-
-      </button>
-
-      <button type="button" class="site-header__button site-header__burger" id="navigation-menu-open-button" title="Open/close navigation menu" aria-label="Open/close navigation menu">Open menu</button>
-    </div>
-  </div>
-</header>
-  <main class="container container--main-content site-main-content">
-    <h1 class="visually-hidden">«SP.shop» — store of unique merch from the "Sborka Project" company.</h1>
-
-    <div class="site-main-content__main-window">
-      <section class="payment-steps-interface">
-        <h2 class="visually-hidden">Payment processing steps</h2>
-
-          <ol class="payment-steps__list payment-breadcrumbs">
-      <li class="payment-breadcrumbs__item">
-        <button type="button"
-                class="payment-breadcrumbs__step-button"
-                data-id="account-step">
-          <b class="payment-breadcrumbs__step-button-counter">1</b>
-          <span class="payment-breadcrumbs__step-button-name">Account</span>
-        </button>
-      </li>
-      <li class="payment-breadcrumbs__item">
-        <button type="button"
-                class="payment-breadcrumbs__step-button"
-                data-id="shipping-step">
-          <b class="payment-breadcrumbs__step-button-counter">2</b>
-          <span class="payment-breadcrumbs__step-button-name">Shipping</span>
-        </button>
-      </li>
-      <li class="payment-breadcrumbs__item">
-        <button type="button"
-                class="payment-breadcrumbs__step-button"
-                data-id="billing-step">
-          <b class="payment-breadcrumbs__step-button-counter">3</b>
-          <span class="payment-breadcrumbs__step-button-name">Billing</span>
-        </button>
-      </li>
-      <li class="payment-breadcrumbs__item">
-        <button type="button"
-                class="payment-breadcrumbs__step-button"
-                data-id="review-step">
-          <b class="payment-breadcrumbs__step-button-counter">4</b>
-          <span class="payment-breadcrumbs__step-button-name">Review</span>
-        </button>
-      </li>
-  </ol>
-
-      </section>
-      
-      <div class="payment-step" data-id="account-step">
-<section class="mock-section">
-  <h2 class="section-title mock-section__title">Mock section</h2>
-
-  <p class="mock-section__description">This is a mock section — an empty section not provided in the layout.</p>
-
-  <div class="mock-section__buttons-box">
-    <button type="button" class="button mock-section__button" title="Back to the previous step of payment" aria-label="Back to the previous step of payment">Back</button>
-    <button type="submit" class="button button--active mock-section__button mock-section__button--submit" title="Go to the next step of payment" aria-label="Go to the next step of payment">Next step</button>
-  </div>
-</section>      </div>
-
-      <div class="payment-step" data-id="shipping-step">
-<section class="mock-section">
-  <h2 class="section-title mock-section__title">Mock section</h2>
-
-  <p class="mock-section__description">This is a mock section — an empty section not provided in the layout.</p>
-
-  <div class="mock-section__buttons-box">
-    <button type="button" class="button mock-section__button" title="Back to the previous step of payment" aria-label="Back to the previous step of payment">Back</button>
-    <button type="submit" class="button button--active mock-section__button mock-section__button--submit" title="Go to the next step of payment" aria-label="Go to the next step of payment">Next step</button>
-  </div>
-</section>      </div>
-
-      <div class="payment-step payment-step--active" data-id="billing-step">
-        <section class="billing-information">
-          <h2 class="section-title billing-information__title">Billing information</h2>
-
-          <div class="billing-information__payment-options billing-payment-options">
-            <input type="radio" name="billing-payment-option" class="visually-hidden billing-payment-options__input" id="billing-payment-credit-card" checked>
-            <label for="billing-payment-credit-card" class="billing-payment-options__label">Pay with Credit Card</label>
-
-            <input type="radio" name="billing-payment-option" class="visually-hidden billing-payment-options__input" id="billing-payment-paypal">
-            <label for="billing-payment-paypal" class="billing-payment-options__label">
-              <span class="visually-hidden">Pay with «PayPal»</span>
-
-              	<svg  class="billing-payment-options__label-icon" width="85" height="23" >
-		<use xlink:href="#icon-paypal" />
-	</svg>
-
-            </label>
-          </div>
-
-          <form action="" method="post" enctype="multipart/form-data" class="billing-information__credit-card-details credit-card-form">
-            <div class="credit-card-form__card-box">
-              <label class="credit-card-form__label">
-                Name on card
-                <input type="text" class="form-input credit-card-form__input" placeholder="Please, enter the name of the cardholder..." required>
-              </label>
-
-              <fieldset class="credit-card-form__fieldset">
-                <legend class="credit-card-form__label">Card number</legend>
-
-                <div class="credit-card-form__fieldset-wrapper">
-                  <input type="text" pattern="[0-9]{4}" inputmode="numeric" class="form-input credit-card-form__input" placeholder="XXXX" required>
-                  <input type="text" pattern="[0-9]{4}" inputmode="numeric" class="form-input credit-card-form__input" placeholder="XXXX" required>
-                  <input type="text" pattern="[0-9]{4}" inputmode="numeric" class="form-input credit-card-form__input" placeholder="XXXX" required>
-                  <input type="text" pattern="[0-9]{4}" inputmode="numeric" class="form-input credit-card-form__input" placeholder="XXXX" required>
-                </div>
-              </fieldset>
-
-              <fieldset class="credit-card-form__fieldset credit-card-form__additional-info">
-                <legend class="visually-hidden">Additional card info</legend>
-
-                <label class="credit-card-form__label">
-                  <span>Expire date</span>
-                  <input type="text" inputmode="numeric" class="form-input credit-card-form__input" placeholder="Enter the expire date of the card..." required>
-                </label>
-
-                <div class="credit-card-form__label">
-                  <label for="customer-cvv">
-                    <div class="more-info">
-                      <span>CVV code</span>
-
-                      <button type="button" class="more-info__pointer">
-                        <span>?</span>
-                        <span class="more-info__description">CVV/CVC code — a three-digit code on the back of your card.</span>
-                      </button>
+                    <div class="search-field__input-box">
+                        <input type="text" class="search-field__input" placeholder="Enter merch name...">
                     </div>
-                  </label>
-
-                  <input type="text" pattern="[0-9]{3}" inputmode="numeric" class="form-input credit-card-form__input" id="customer-cvv" placeholder="Enter 3 secret digits..." required>
                 </div>
-              </fieldset>
-            </div>
 
-            <fieldset class="credit-card-form__fieldset">
-              <legend class="visually-hidden">Additional options and conditions</legend>
+                <button type="button" class="site-header__button site-header__basket" id="basket-button" title="Items in your cart" aria-label="Items in your cart">
+                    <svg class="site-header__button-icon site-header__basket-icon" width="24" height="21">
+                        <use xlink:href="#icon-cart" />
+                    </svg>
 
-              <input type="checkbox" class="visually-hidden credit-card-form__checkbox" id="credit-card-save" checked>
-              <label for="credit-card-save" class="credit-card-form__checkbox-label">Save information of this credit card</label>
-
-              <input type="checkbox" class="visually-hidden credit-card-form__checkbox" id="credit-card-privacy-policy" required>
-              <label for="credit-card-privacy-policy" class="credit-card-form__checkbox-label">I accept the <a href="#" class="credit-card-form__link">terms and conditions</a> and the <a href="#" class="credit-card-form__link">Privacy Policies</a></label>
-            </fieldset>
-
-            <div class="credit-card-form__buttons-box">
-              <button type="button" class="button credit-card-form__button" title="Back to the previous step of payment" aria-label="Back to the previous step of payment">Back</button>
-              <button type="submit" class="button button--active credit-card-form__button credit-card-form__button--submit" title="Check out the validity of entered data and submit the Form" aria-label="Check out the validity of entered data and submit the Form">Check Out</button>
-            </div>
-          </form>
-        </section>
-      </div>
-
-      <div class="payment-step" data-id="review-step">
-<section class="mock-section">
-  <h2 class="section-title mock-section__title">Mock section</h2>
-
-  <p class="mock-section__description">This is a mock section — an empty section not provided in the layout.</p>
-
-  <div class="mock-section__buttons-box">
-    <button type="button" class="button mock-section__button" title="Back to the previous step of payment" aria-label="Back to the previous step of payment">Back</button>
-    <button type="submit" class="button button--active mock-section__button mock-section__button--submit" title="Go to the next step of payment" aria-label="Go to the next step of payment">Next step</button>
-  </div>
-</section>      </div>
-    </div>
-
-    <div class="site-main-content__sidebar" id="sidebar-box">
-
-<section class="sidebar">
-  <h2 class="visually-hidden">Sidebar</h3>
-
-  <section class="sidebar__section basket-content" id="basket-content">
-    <h3 class="section-title basket-content__title">Basket content</h3>
-
-      <ul class="basket-content__products" id="basket-content-products-list">
-      <li class="basket-content__products-item">
-        <article class="product-card">
-          <h4 class="visually-hidden">
-              Storm-resistant Jacket
-          </h4>
-
-          <picture>
-            <source type="image/webp" srcset="assets/images/storm-resistant-jacket.webp, assets/images/storm-resistant-jacket@2x.webp 2x">
-            <img src="assets/images/storm-resistant-jacket.jpg" srcset="assets/images/storm-resistant-jacket@2x.jpg" width="100" height="100" class="product-card__preview" alt="Demi-season storm-resistant jacket from the «SP Autumn-2021» collection.">
-          </picture>
-
-          <div class="product-card__content">
-            <p class="product-card__description">Demi-season storm-resistant jacket from the new autumn collection «SP Autumn-2021» will easily help you to survive any bad weather.</p>
-
-            <div class="product-card__quantity-management">
-              <div class="product-card__goods-count">
-                <button type="button" class="product-card__goods-count-toggle product-card__goods-count-toggle--subtract" title="Remove one item of this product from the basket" aria-label="Remove one item of this product from the basket" disabled>
-                  	<svg  class="product-card__goods-count-toggle-icon" width="20" height="20" >
-		<use xlink:href="#icon-minus" />
-	</svg>
-
+                    <span class="site-header__basket-items-counter" id="basket-items-counter">0</span>
                 </button>
 
-                <output class="product-card__goods-count-output" title="Count of positions for this product in the basket" aria-label="Count of positions for this product in the basket">1</output>
-
-                <button type="button" class="product-card__goods-count-toggle product-card__goods-count-toggle--add" title="Add one more item of this product to the basket" aria-label="Add one more item of this product to the basket">
-                  	<svg  class="product-card__goods-count-toggle-icon" width="20" height="20" >
-		<use xlink:href="#icon-plus" />
-	</svg>
-
-                </button>
-              </div>
-
-              <span class="product-card__total-cost" data-product-cost="$ 525" title="Total cost of this product" aria-label="Total cost of this product">$ 525</span>
+                <button type="button" class="site-header__button site-header__burger" id="navigation-menu-open-button" title="Open/close navigation menu" aria-label="Open/close navigation menu">Open menu</button>
             </div>
-          </div>
-          
-          <div class="product-card__remove-button-box">
-            <button type="button" class="product-card__remove-button" title="Remove this product from the basket" aria-label="Remove this product from the basket">Remove item</button>
-          </div>
-        </article>
-      </li>
-      <li class="basket-content__products-item">
-        <article class="product-card">
-          <h4 class="visually-hidden">
-              Timeless Sneakers
-          </h4>
+        </div>
+    </header>
+    <main class="container container--main-content site-main-content">
+        <h1 class="visually-hidden">«SP.shop» — store of unique merch from the "Sborka Project" company.</h1>
 
-          <picture>
-            <source type="image/webp" srcset="assets/images/timeless-sneakers.webp, assets/images/timeless-sneakers@2x.webp 2x">
-            <img src="assets/images/timeless-sneakers.jpg" srcset="assets/images/timeless-sneakers@2x.jpg" width="100" height="100" class="product-card__preview" alt="Timeless Sneakers from the «Nike-SP 2021» collection.">
-          </picture>
+        <div class="site-main-content__main-window">
+            <section class="payment-steps-interface">
+                <h2 class="visually-hidden">Payment processing steps</h2>
 
-          <div class="product-card__content">
-            <p class="product-card__description">Timeless sneakers — a joint development of the «Nike» and «Sborka Project» companies — will provide you with a comfortable movement in any weather and landscape conditions.</p>
+                <ol class="payment-steps__list payment-breadcrumbs" id="payment-breadcrumbs">
+                    <li class="payment-breadcrumbs__item">
+                        <button type="button" class="payment-breadcrumbs__step-button" data-id="account-step">
+                            <b class="payment-breadcrumbs__step-button-counter">1</b>
+                            <span class="payment-breadcrumbs__step-button-name">Account</span>
+                        </button>
+                    </li>
+                    <li class="payment-breadcrumbs__item">
+                        <button type="button" class="payment-breadcrumbs__step-button" data-id="shipping-step">
+                            <b class="payment-breadcrumbs__step-button-counter">2</b>
+                            <span class="payment-breadcrumbs__step-button-name">Shipping</span>
+                        </button>
+                    </li>
+                    <li class="payment-breadcrumbs__item">
+                        <button type="button" class="payment-breadcrumbs__step-button" data-id="billing-step">
+                            <b class="payment-breadcrumbs__step-button-counter">3</b>
+                            <span class="payment-breadcrumbs__step-button-name">Billing</span>
+                        </button>
+                    </li>
+                    <li class="payment-breadcrumbs__item">
+                        <button type="button" class="payment-breadcrumbs__step-button" data-id="review-step">
+                            <b class="payment-breadcrumbs__step-button-counter">4</b>
+                            <span class="payment-breadcrumbs__step-button-name">Review</span>
+                        </button>
+                    </li>
+                </ol>
 
-            <div class="product-card__quantity-management">
-              <div class="product-card__goods-count">
-                <button type="button" class="product-card__goods-count-toggle product-card__goods-count-toggle--subtract" title="Remove one item of this product from the basket" aria-label="Remove one item of this product from the basket" disabled>
-                  	<svg  class="product-card__goods-count-toggle-icon" width="20" height="20" >
-		<use xlink:href="#icon-minus" />
-	</svg>
+            </section>
 
-                </button>
+            <div class="payment-step" data-id="account-step">
+                <section class="mock-section">
+                    <h2 class="section-title mock-section__title">Mock section</h2>
 
-                <output class="product-card__goods-count-output" title="Count of positions for this product in the basket" aria-label="Count of positions for this product in the basket">1</output>
+                    <p class="mock-section__description">This is a mock section — an empty section not provided in the layout.</p>
 
-                <button type="button" class="product-card__goods-count-toggle product-card__goods-count-toggle--add" title="Add one more item of this product to the basket" aria-label="Add one more item of this product to the basket">
-                  	<svg  class="product-card__goods-count-toggle-icon" width="20" height="20" >
-		<use xlink:href="#icon-plus" />
-	</svg>
-
-                </button>
-              </div>
-
-              <span class="product-card__total-cost" data-product-cost="$ 125" title="Total cost of this product" aria-label="Total cost of this product">$ 125</span>
+                    <div class="mock-section__buttons-box">
+                        <button type="button" class="button mock-section__button" title="Back to the previous step of payment" aria-label="Back to the previous step of payment">Back</button>
+                        <button type="submit" class="button button--active mock-section__button mock-section__button--submit" title="Go to the next step of payment" aria-label="Go to the next step of payment">Next step</button>
+                    </div>
+                </section>
             </div>
-          </div>
-          
-          <div class="product-card__remove-button-box">
-            <button type="button" class="product-card__remove-button" title="Remove this product from the basket" aria-label="Remove this product from the basket">Remove item</button>
-          </div>
-        </article>
-      </li>
-  </ul>
 
+            <div class="payment-step" data-id="shipping-step">
+                <section class="mock-section">
+                    <h2 class="section-title mock-section__title">Mock section</h2>
 
-    <p class="basket-content__empty-basket-notification empty-basket-notification" id="empty-basket-notification">
-      <span class="empty-basket-notification__sentence">O-o-ops!</span>
-      <span class="empty-basket-notification__sentence">It looks like your basket is&nbsp;empty!&nbsp;:(</span>
-      <span class="empty-basket-notification__sentence">Rather fill it with goods!</span>
-    </p>
-  </section>
+                    <p class="mock-section__description">This is a mock section — an empty section not provided in the layout.</p>
 
-  <section class="sidebar__section promo-code-section">
-    <h3 class="section-title promo-code-section__title">Promo code</h3>
+                    <div class="mock-section__buttons-box">
+                        <button type="button" class="button mock-section__button" title="Back to the previous step of payment" aria-label="Back to the previous step of payment">Back</button>
+                        <button type="submit" class="button button--active mock-section__button mock-section__button--submit" title="Go to the next step of payment" aria-label="Go to the next step of payment">Next step</button>
+                    </div>
+                </section>
+            </div>
 
-    <form action="" method="post" enctype="multipart/form-data" class="promo-code-section__form promo-code-form">
-      <input type="text" class="form-input promo-code-form__input" placeholder="If you have one, enter the promo code...">
-      <button type="submit" class="button button--active promo-code-form__submit-button" title="Check and apply promo code" aria-label="Check and apply promo code">Apply</button>
-    </form>
-  </section>
+            <div class="payment-step payment-step--active" data-id="billing-step">
+                <section class="billing-information">
+                    <h2 class="section-title billing-information__title">Billing information</h2>
 
-  <section class="sidebar__section total-purchase-cost" id="total-purchase-cost">
-    <h3 class="visually-hidden">Total purchase cost</h3>
+                    <div class="billing-information__payment-options billing-payment-options">
+                        <input type="radio" name="billing-payment-option" class="visually-hidden billing-payment-options__input" id="billing-payment-credit-card" checked>
+                        <label for="billing-payment-credit-card" class="billing-payment-options__label">Pay with Credit Card</label>
 
-    <table class="total-purchase-cost__table payment-table">
-      <tbody class="payment-table__body">
-        <tr class="payment-table__row" id="purchase-cost--subtotal">
-          <th class="payment-table__row-heading">Subtotal</th>
-          <td class="payment-table__row-data">$ 1050</td>
-        </tr>
+                        <input type="radio" name="billing-payment-option" class="visually-hidden billing-payment-options__input" id="billing-payment-paypal">
+                        <label for="billing-payment-paypal" class="billing-payment-options__label">
+                            <span class="visually-hidden">Pay with «PayPal»</span>
 
-        <tr class="payment-table__row" id="purchase-cost--tax">
-          <th class="payment-table__row-heading">Tax</th>
-          <td class="payment-table__row-data">$ 100</td>
-        </tr>
+                            <svg class="billing-payment-options__label-icon" width="85" height="23">
+                                <use xlink:href="#icon-paypal" />
+                            </svg>
 
-        <tr class="payment-table__row" id="purchase-cost--shipping">
-          <th class="payment-table__row-heading">Shipping</th>
-          <td class="payment-table__row-data">$ 150</td>
-        </tr>
-      </tbody>
+                        </label>
+                    </div>
 
-      <tfoot class="payment-table__footer">
-        <tr class="payment-table__row" id="purchase-cost--total">
-          <th class="payment-table__row-heading payment-table__row-heading--bold">Total</th>
-          <td class="payment-table__row-data payment-table__row-data--bold">$ 1300</td>
-        </tr>
-      </tfoot>
-    </table>
-  </section>
-</section>    </div>
-  </main>
+                    <form action="" method="post" enctype="multipart/form-data" class="billing-information__credit-card-details credit-card-form">
+                        <div class="credit-card-form__card-box">
+                            <label class="credit-card-form__label">
+                                Name on card
+                                <input type="text" class="form-input credit-card-form__input" placeholder="Please, enter the name of the cardholder..." required>
+                            </label>
 
-			<script src="assets/js/bundle.js?hash"></script>
-	</body>
+                            <fieldset class="credit-card-form__fieldset">
+                                <legend class="credit-card-form__label">Card number</legend>
+
+                                <div class="credit-card-form__fieldset-wrapper">
+                                    <input type="text" pattern="[0-9]{4}" inputmode="numeric" class="form-input credit-card-form__input" placeholder="XXXX" required>
+                                    <input type="text" pattern="[0-9]{4}" inputmode="numeric" class="form-input credit-card-form__input" placeholder="XXXX" required>
+                                    <input type="text" pattern="[0-9]{4}" inputmode="numeric" class="form-input credit-card-form__input" placeholder="XXXX" required>
+                                    <input type="text" pattern="[0-9]{4}" inputmode="numeric" class="form-input credit-card-form__input" placeholder="XXXX" required>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="credit-card-form__fieldset credit-card-form__additional-info">
+                                <legend class="visually-hidden">Additional card info</legend>
+
+                                <label class="credit-card-form__label">
+                                    <span>Expire date</span>
+                                    <input type="text" inputmode="numeric" class="form-input credit-card-form__input" placeholder="Enter the expire date of the card..." required>
+                                </label>
+
+                                <div class="credit-card-form__label">
+                                    <label for="customer-cvv">
+                                        <div class="more-info">
+                                            <span>CVV code</span>
+
+                                            <button type="button" class="more-info__pointer">
+                                                <span>?</span>
+                                                <span class="more-info__description">CVV/CVC code — a three-digit code on the back of your card.</span>
+                                            </button>
+                                        </div>
+                                    </label>
+
+                                    <input type="text" pattern="[0-9]{3}" inputmode="numeric" class="form-input credit-card-form__input" id="customer-cvv" placeholder="Enter 3 secret digits..." required>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <fieldset class="credit-card-form__fieldset">
+                            <legend class="visually-hidden">Additional options and conditions</legend>
+
+                            <input type="checkbox" class="visually-hidden credit-card-form__checkbox" id="credit-card-save" checked>
+                            <label for="credit-card-save" class="credit-card-form__checkbox-label">Save information of this credit card</label>
+
+                            <input type="checkbox" class="visually-hidden credit-card-form__checkbox" id="credit-card-privacy-policy" required>
+                            <label for="credit-card-privacy-policy" class="credit-card-form__checkbox-label">I accept the <a href="#" class="credit-card-form__link">terms and conditions</a> and the <a href="#" class="credit-card-form__link">Privacy Policies</a></label>
+                        </fieldset>
+
+                        <div class="credit-card-form__buttons-box">
+                            <button type="button" class="button credit-card-form__button" title="Back to the previous step of payment" aria-label="Back to the previous step of payment">Back</button>
+                            <button type="submit" class="button button--active credit-card-form__button credit-card-form__button--submit" title="Check out the validity of entered data and submit the Form" aria-label="Check out the validity of entered data and submit the Form">Check Out</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+            <div class="payment-step" data-id="review-step">
+                <section class="mock-section">
+                    <h2 class="section-title mock-section__title">Mock section</h2>
+
+                    <p class="mock-section__description">This is a mock section — an empty section not provided in the layout.</p>
+
+                    <div class="mock-section__buttons-box">
+                        <button type="button" class="button mock-section__button" title="Back to the previous step of payment" aria-label="Back to the previous step of payment">Back</button>
+                        <button type="submit" class="button button--active mock-section__button mock-section__button--submit" title="Go to the next step of payment" aria-label="Go to the next step of payment">Next step</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="site-main-content__sidebar" id="sidebar-box">
+
+            <section class="sidebar">
+                <h2 class="visually-hidden">Sidebar</h3>
+
+                    <section class="sidebar__section basket-content" id="basket-content">
+                        <h3 class="section-title basket-content__title">Basket content</h3>
+
+                        <ul class="basket-content__products" id="basket-content-products-list">
+                            <li class="basket-content__products-item">
+                                <article class="product-card">
+                                    <h4 class="visually-hidden">
+                                        Storm-resistant Jacket
+                                    </h4>
+
+                                    <picture>
+                                        <source type="image/webp" srcset="assets/images/storm-resistant-jacket.webp, assets/images/storm-resistant-jacket@2x.webp 2x">
+                                        <img src="assets/images/storm-resistant-jacket.jpg" srcset="assets/images/storm-resistant-jacket@2x.jpg" width="100" height="100" class="product-card__preview" alt="Demi-season storm-resistant jacket from the «SP Autumn-2021» collection.">
+                                    </picture>
+
+                                    <div class="product-card__content">
+                                        <p class="product-card__description">Demi-season storm-resistant jacket from the new autumn collection «SP Autumn-2021» will easily help you to survive any bad weather.</p>
+
+                                        <div class="product-card__quantity-management">
+                                            <div class="product-card__goods-count">
+                                                <button type="button" class="product-card__goods-count-toggle product-card__goods-count-toggle--subtract" title="Remove one item of this product from the basket" aria-label="Remove one item of this product from the basket" disabled>
+                                                    <svg class="product-card__goods-count-toggle-icon" width="20" height="20">
+                                                        <use xlink:href="#icon-minus" />
+                                                    </svg>
+
+                                                </button>
+
+                                                <output class="product-card__goods-count-output" title="Count of positions for this product in the basket" aria-label="Count of positions for this product in the basket">1</output>
+
+                                                <button type="button" class="product-card__goods-count-toggle product-card__goods-count-toggle--add" title="Add one more item of this product to the basket" aria-label="Add one more item of this product to the basket">
+                                                    <svg class="product-card__goods-count-toggle-icon" width="20" height="20">
+                                                        <use xlink:href="#icon-plus" />
+                                                    </svg>
+
+                                                </button>
+                                            </div>
+
+                                            <span class="product-card__total-cost" data-product-cost="$ 525" title="Total cost of this product" aria-label="Total cost of this product">$ 525</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-card__remove-button-box">
+                                        <button type="button" class="product-card__remove-button" title="Remove this product from the basket" aria-label="Remove this product from the basket">Remove item</button>
+                                    </div>
+                                </article>
+                            </li>
+                            <li class="basket-content__products-item">
+                                <article class="product-card">
+                                    <h4 class="visually-hidden">
+                                        Timeless Sneakers
+                                    </h4>
+
+                                    <picture>
+                                        <source type="image/webp" srcset="assets/images/timeless-sneakers.webp, assets/images/timeless-sneakers@2x.webp 2x">
+                                        <img src="assets/images/timeless-sneakers.jpg" srcset="assets/images/timeless-sneakers@2x.jpg" width="100" height="100" class="product-card__preview" alt="Timeless Sneakers from the «Nike-SP 2021» collection.">
+                                    </picture>
+
+                                    <div class="product-card__content">
+                                        <p class="product-card__description">Timeless sneakers — a joint development of the «Nike» and «Sborka Project» companies — will provide you with a comfortable movement in any weather and landscape conditions.</p>
+
+                                        <div class="product-card__quantity-management">
+                                            <div class="product-card__goods-count">
+                                                <button type="button" class="product-card__goods-count-toggle product-card__goods-count-toggle--subtract" title="Remove one item of this product from the basket" aria-label="Remove one item of this product from the basket" disabled>
+                                                    <svg class="product-card__goods-count-toggle-icon" width="20" height="20">
+                                                        <use xlink:href="#icon-minus" />
+                                                    </svg>
+
+                                                </button>
+
+                                                <output class="product-card__goods-count-output" title="Count of positions for this product in the basket" aria-label="Count of positions for this product in the basket">1</output>
+
+                                                <button type="button" class="product-card__goods-count-toggle product-card__goods-count-toggle--add" title="Add one more item of this product to the basket" aria-label="Add one more item of this product to the basket">
+                                                    <svg class="product-card__goods-count-toggle-icon" width="20" height="20">
+                                                        <use xlink:href="#icon-plus" />
+                                                    </svg>
+
+                                                </button>
+                                            </div>
+
+                                            <span class="product-card__total-cost" data-product-cost="$ 125" title="Total cost of this product" aria-label="Total cost of this product">$ 125</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-card__remove-button-box">
+                                        <button type="button" class="product-card__remove-button" title="Remove this product from the basket" aria-label="Remove this product from the basket">Remove item</button>
+                                    </div>
+                                </article>
+                            </li>
+                        </ul>
+
+                        <p class="basket-content__empty-basket-notification empty-basket-notification" id="empty-basket-notification">
+                            <span class="empty-basket-notification__sentence">O-o-ops!</span>
+                            <span class="empty-basket-notification__sentence">It looks like your basket is&nbsp;empty!&nbsp;:(</span>
+                            <span class="empty-basket-notification__sentence">Rather fill it with goods!</span>
+                        </p>
+                    </section>
+
+                    <section class="sidebar__section promo-code-section">
+                        <h3 class="section-title promo-code-section__title">Promo code</h3>
+
+                        <form action="" method="post" enctype="multipart/form-data" class="promo-code-section__form promo-code-form">
+                            <input type="text" class="form-input promo-code-form__input" placeholder="If you have one, enter the promo code...">
+                            <button type="submit" class="button button--active promo-code-form__submit-button" title="Check and apply promo code" aria-label="Check and apply promo code">Apply</button>
+                        </form>
+                    </section>
+
+                    <section class="sidebar__section total-purchase-cost" id="total-purchase-cost">
+                        <h3 class="visually-hidden">Total purchase cost</h3>
+
+                        <table class="total-purchase-cost__table payment-table">
+                            <tbody class="payment-table__body">
+                                <tr class="payment-table__row" id="purchase-cost--subtotal">
+                                    <th class="payment-table__row-heading">Subtotal</th>
+                                    <td class="payment-table__row-data">$ 1050</td>
+                                </tr>
+
+                                <tr class="payment-table__row" id="purchase-cost--tax">
+                                    <th class="payment-table__row-heading">Tax</th>
+                                    <td class="payment-table__row-data">$ 100</td>
+                                </tr>
+
+                                <tr class="payment-table__row" id="purchase-cost--shipping">
+                                    <th class="payment-table__row-heading">Shipping</th>
+                                    <td class="payment-table__row-data">$ 150</td>
+                                </tr>
+                            </tbody>
+
+                            <tfoot class="payment-table__footer">
+                                <tr class="payment-table__row" id="purchase-cost--total">
+                                    <th class="payment-table__row-heading payment-table__row-heading--bold">Total</th>
+                                    <td class="payment-table__row-data payment-table__row-data--bold">$ 1300</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </section>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/js/bundle.js?020b846508056cd3f2ffe526e355e4e5"></script>
+</body>
+
 </html>
