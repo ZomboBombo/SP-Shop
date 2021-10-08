@@ -1,3 +1,8 @@
 .payment-steps-interface {
+	display: none;
 	margin-top: 62px;
+
+	&--js-enabled {
+		display: block;
+	}
 }

@@ -1,9 +1,31 @@
 .payment-step {
+	display: block;
+
 	width: 100%;
 	max-width: 660px;
 
 	margin: 0 auto;
 	margin-top: 60px;
+
+	&--js-enabled {
+		position: absolute;
+		top: auto;
+		left: -100%;
+
+		opacity: 0;
+
+		$properties-for-transition: top, left, opacity;
+
+		@include transition-settings($properties-for-transition, 0.3s);
+	}
+
+	&--active {
+		position: relative;
+		top: 0;
+		left: 0;
+
+		opacity: 1;
+	}
 }
 
 /*
