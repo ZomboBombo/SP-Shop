@@ -25,7 +25,7 @@
         </div>
       </div>
 
-      <button type="button" class="site-header__button site-header__basket" id="basket-button" title="Items in your cart: 0" aria-label="Items in your cart: 0">
+      <button type="button" class="site-header__button site-header__basket" id="basket-button" title="Items in your cart" aria-label="Items in your cart">
         {{ icon({
             iconName: 'cart',
             className: 'site-header__button-icon site-header__basket-icon',
@@ -33,6 +33,8 @@
             height: 21
           })
         }}
+
+        <span class="site-header__basket-items-counter" id="basket-items-counter">0</span>
       </button>
 
       <button type="button" class="site-header__button site-header__burger" id="navigation-menu-open-button" title="Open/close navigation menu" aria-label="Open/close navigation menu">Open menu</button>

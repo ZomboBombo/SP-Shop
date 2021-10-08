@@ -46,8 +46,33 @@
 }
 
 .site-header__basket {
+	position: relative;
+
 	width: 42px;
 	height: 42px;
+}
+
+.site-header__basket-items-counter {
+	position: absolute;
+	top: 3px;
+	right: 2px;
+
+	display: none;
+
+	width: 14px;
+	height: 14px;
+
+	font-size: 10px;
+	font-weight: 400;
+	line-height: 12px;
+	color: $white;
+
+	background-color: $sp-shop--blue;
+	border-radius: 50%;
+
+	&--show-items-count {
+		display: block;
+	}
 }
 
 .site-header__burger {
