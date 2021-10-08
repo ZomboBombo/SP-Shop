@@ -5,7 +5,7 @@
 
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
 
 	&::after {
 		content: '';
@@ -32,16 +32,21 @@
 	flex-direction: column;
 	align-items: center;
 
+	width: 100%;
+	max-width: 66px;
+
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
 
-	$properties-for-transition: transform, opacity;
+	$properties-for-transition: background-color, box-shadow;
 
-	@include transition-settings($properties-for-transition, 0.05s);
+	@include transition-settings($properties-for-transition, 0.15s);
 }
 
 .payment-breadcrumbs__step-button-counter {
+	position: relative;
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -60,6 +65,20 @@
 	border-radius: 50%;
 }
 
+// --- Стили для Линии между двумя блоками-номерами шагов оплаты ---
+.payment-breadcrumbs__line-between-counters {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: -1;
+
+	display: block;
+
+	height: 2px;
+
+	background-color: $sp-shop--blue;
+}
+
 .payment-breadcrumbs__step-button-name {
 	display: inline-block;
 
@@ -69,7 +88,8 @@
 	font-weight: 400;
 	line-height: 16px;
 	vertical-align: middle;
-	color: #000000;
+	color: $black;
+	word-break: break-word;
 }
 
 /*
@@ -77,18 +97,50 @@
 */
 .payment-breadcrumbs__step-button:hover,
 .payment-breadcrumbs__step-button:focus {
-	transform: scale(1.1);
+	color: $white;
+	background-color: $sp-shop--blue;
+	box-shadow: 0 0 4px 12px $sp-shop--blue;
+}
+
+.payment-breadcrumbs__step-button:hover > .payment-breadcrumbs__step-button-counter,
+.payment-breadcrumbs__step-button:focus > .payment-breadcrumbs__step-button-counter {
+	color: $white;
+	background-color: $sp-shop--blue;
+	border-color: $white;
+}
+
+.payment-breadcrumbs__step-button:hover > .payment-breadcrumbs__step-button-name,
+.payment-breadcrumbs__step-button:focus > .payment-breadcrumbs__step-button-name {
+	color: $white;
 }
 
 .payment-breadcrumbs__step-button:active {
-	transform: scale(0.95);
+	color: $black;
+	background-color: transparent;
+	box-shadow: none;
+}
+
+.payment-breadcrumbs__step-button:active > .payment-breadcrumbs__step-button-name {
+	color: $black;
+}
+
+.payment-breadcrumbs__step-button:active > .payment-breadcrumbs__step-button-counter {
+	color: $black;
+	background-color: $white;
+	border-color: $sp-shop--blue;
 }
 
 .payment-breadcrumbs__step-button:disabled {
-	transform: scale(1);
+	background-color: transparent;
+	box-shadow: none;
 	cursor: default;
 }
 
+.payment-breadcrumbs__step-button:disabled > .payment-breadcrumbs__step-button-name {
+	color: $black;
+}
+
+.payment-breadcrumbs__step-button:disabled > .payment-breadcrumbs__step-button-counter,
 .payment-breadcrumbs__step-button--disabled > .payment-breadcrumbs__step-button-counter {
 	color: $payment-step--disabled;
 	background-color: $white;
