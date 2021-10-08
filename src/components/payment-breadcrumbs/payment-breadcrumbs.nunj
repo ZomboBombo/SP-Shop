@@ -1,5 +1,5 @@
 {% macro paymentBreadcrumbs() %}
-  <ol class="payment-steps__list payment-breadcrumbs">
+  <ol class="payment-steps__list payment-breadcrumbs" id="payment-breadcrumbs">
     {% for item in paymentBreadcrumbsItems %}
       <li class="payment-breadcrumbs__item">
         <button type="button"

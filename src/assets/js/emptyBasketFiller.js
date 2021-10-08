@@ -1,5 +1,5 @@
 import Util from 'utils/utility-constants';
-import getNewObserver from './observerOfElementChanges';
+import getObserverOfBasketFilling from './observerOfElementChanges';
 
 // ---------- КОНСТАНТЫ -----------
 const EMPTY_BASKET_NOTIFICATION_SHOW_MOD = 'empty-basket-notification--show';
@@ -34,7 +34,7 @@ const notifyAboutemptyBasket = () => {
 =============================================================================================
 */
 const trackEmptyBasket = () => {
-	getNewObserver(basketContentProductList, notifyAboutemptyBasket);
+	getObserverOfBasketFilling(basketContentProductList, notifyAboutemptyBasket);
 };
 
 export default trackEmptyBasket;

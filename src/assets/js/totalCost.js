@@ -88,17 +88,17 @@ const calculateTotalCost = () => {
 // *** Ф-ция для отслеживания изменения состояний стоимости товаров в Корзине ***
 const observeProductCostChange = () => {
 	for (const basketItemCost of basketContentItemsCosts) {
-		const productCostChangeObserver = getNewObserver(basketItemCost, calculateSubtotal);
+		getNewObserver(basketItemCost, calculateSubtotal);
 	}
 };
 
 // *** Ф-ция для отслеживания изменения количества товаров в Корзине ***
 const observeBasketContentChange = () => {
-	const basketContentChangeObserver = getNewObserver(basketContentItemsList, calculateSubtotal);
+	getNewObserver(basketContentItemsList, calculateSubtotal);
 };
 
 const observeSubtotalChange = () => {
-	const subtotalChangeObserver = getNewObserver(paymentTableSubtotalValue, calculateTotalCost);
+	getNewObserver(paymentTableSubtotalValue, calculateTotalCost);
 };
 
 /*
