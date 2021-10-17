@@ -11,8 +11,6 @@ import colors from 'ansi-colors';
 import { PRODUCTION } from '../config';
 import PATHS from '../paths';
 import * as extensions from '../src/templates/lib/extensions.js';
-import filters from '../src/templates/lib/filters.js';
-import functions from '../src/templates/lib/functions.js';
 
 export default function html() {
 	delete require.cache[require.resolve('../global-data.json')];
@@ -41,8 +39,6 @@ export default function html() {
 					globalData
 				),
 				extensions,
-				filters,
-				functions,
 				trimBlocks: true,
 				lstripBlocks: true,
 				autoescape: false,
